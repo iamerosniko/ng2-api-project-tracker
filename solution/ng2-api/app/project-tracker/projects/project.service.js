@@ -16,20 +16,20 @@ var ProjectService = (function () {
     function ProjectService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.projectsUrl = 'api/projects'; // testing
+        this.projectsUrl = 'http://localhost:59916/api/projects'; // testing
     }
     ProjectService.prototype.postProject = function (newProject) {
         return this.http
             .post(this.projectsUrl, JSON.stringify(newProject), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; }) // testing
+            .then(function (res) { return res.json(); }) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.getProjects = function () {
         return this.http
             .get(this.projectsUrl, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json().data; }) //testing
+            .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
     ProjectService.prototype.getProject = function (id) {
@@ -37,7 +37,7 @@ var ProjectService = (function () {
         return this.http
             .get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; }) // testing
+            .then(function (response) { return response.json(); }) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.putProject = function (project) {
