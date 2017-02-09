@@ -9,17 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var ProjectTrackerComponent = (function () {
+    function ProjectTrackerComponent() {
     }
-    AppComponent = __decorate([
+    ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html'
+            template: "\n    <div class=\"panel-body\">\n        \n        <a class=\"btn btn-primary btn-sm\" routerLink=\"/project-edit\">New Project</a>\n        \n        \n        <router-outlet></router-outlet>\n        <project-list></project-list>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ProjectTrackerComponent);
+    return ProjectTrackerComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.ProjectTrackerComponent = ProjectTrackerComponent;

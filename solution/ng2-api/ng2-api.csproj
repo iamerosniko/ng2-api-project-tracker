@@ -204,6 +204,16 @@
     <Content Include="app\file\upload\upload-single.component.js" />
     <Content Include="app\file\upload\upload.component.js" />
     <Content Include="app\main.js" />
+    <Content Include="app\project-tracker\project-tracker.component.js" />
+    <Content Include="app\project-tracker\project-tracker.module.js" />
+    <Content Include="app\project-tracker\project-tracker.routing.js" />
+    <Content Include="app\project-tracker\projects\project-data.service.js" />
+    <Content Include="app\project-tracker\projects\project-edit.component.html" />
+    <Content Include="app\project-tracker\projects\project-edit.component.js" />
+    <Content Include="app\project-tracker\projects\project-list.component.html" />
+    <Content Include="app\project-tracker\projects\project-list.component.js" />
+    <Content Include="app\project-tracker\projects\project.js" />
+    <Content Include="app\project-tracker\projects\project.service.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

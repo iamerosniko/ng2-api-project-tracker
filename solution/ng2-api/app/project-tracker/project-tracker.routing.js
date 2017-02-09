@@ -10,21 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var about_component_1 = require('./about.component');
-var appRoutes = [
-    { path: 'about', component: about_component_1.AboutComponent },
-    { path: '', redirectTo: 'download', pathMatch: 'full' }
+//component
+var project_list_component_1 = require('./projects/project-list.component');
+var project_edit_component_1 = require('./projects/project-edit.component');
+var project_tracker_component_1 = require('./project-tracker.component');
+var projectTrackerRoutes = [
+    //paths
+    { path: 'project-tracker', component: project_tracker_component_1.ProjectTrackerComponent },
+    //projects folder
+    { path: 'project-list', component: project_list_component_1.ProjectListComponent },
+    { path: 'project-edit', component: project_edit_component_1.ProjectEditComponent }
 ];
-var AppRouting = (function () {
-    function AppRouting() {
+var ProjectTrackerRouting = (function () {
+    function ProjectTrackerRouting() {
     }
-    AppRouting = __decorate([
+    ProjectTrackerRouting = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
+            imports: [router_1.RouterModule.forChild(projectTrackerRoutes)],
             exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRouting);
-    return AppRouting;
+    ], ProjectTrackerRouting);
+    return ProjectTrackerRouting;
 }());
-exports.AppRouting = AppRouting;
+exports.ProjectTrackerRouting = ProjectTrackerRouting;
