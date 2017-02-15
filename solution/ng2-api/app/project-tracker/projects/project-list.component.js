@@ -9,30 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_service_1 = require('./project.service');
+var project_parent_component_1 = require('./project-parent.component');
 var ProjectListComponent = (function () {
-    function ProjectListComponent(router, projectService) {
-        this.router = router;
-        this.projectService = projectService;
+    function ProjectListComponent() {
     }
-    ProjectListComponent.prototype.getProjects = function () {
-        var _this = this;
-        this.projectService.getProjects().then(function (project) { return _this.projects = project; });
+    ProjectListComponent.prototype.newProject = function () {
+        this.mainProject.newRecord();
     };
-    ProjectListComponent.prototype.ngOnInit = function () {
-        this.getProjects();
+    ProjectListComponent.prototype.deleteProject = function (projectid) {
+        this.mainProject.deleteRecord(projectid);
+        this.mainProject.refreshList();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
-        this.router.navigate(['/project', project.id]);
+        this.mainProject.viewpage = 1;
+        this.mainProject.selectedProject = project;
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', project_parent_component_1.ProjectParentComponent)
+    ], ProjectListComponent.prototype, "mainProject", void 0);
     ProjectListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'project-list.component.html',
             selector: 'project-list'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [])
     ], ProjectListComponent);
     return ProjectListComponent;
 }());

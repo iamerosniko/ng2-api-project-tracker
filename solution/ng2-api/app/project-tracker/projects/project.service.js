@@ -12,11 +12,11 @@ require('rxjs/add/operator/toPromise');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var ProjectService = (function () {
-    //private carsUrl = 'http://localhost:3000/api/ng2_cars';;  // live
+    //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
     function ProjectService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.projectsUrl = 'http://localhost:59916/api/projects'; // testing
+        this.projectsUrl = 'api/projects'; // testing
     }
     ProjectService.prototype.postProject = function (newProject) {
         return this.http
@@ -29,7 +29,7 @@ var ProjectService = (function () {
         return this.http
             .get(this.projectsUrl, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json(); }) //testing
+            .then(function (response) { return response.json().data; }) //testing
             .catch(this.handleError);
     };
     ProjectService.prototype.getProject = function (id) {
@@ -37,7 +37,7 @@ var ProjectService = (function () {
         return this.http
             .get(url)
             .toPromise()
-            .then(function (response) { return response.json(); }) // testing
+            .then(function (response) { return response.json().data; }) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.putProject = function (project) {

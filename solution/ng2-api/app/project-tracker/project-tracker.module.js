@@ -12,13 +12,10 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-//Imports for loading & configuring the in-memory web api
-//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService }  from './in-memory-data.service';
 //Components
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
-var project_tracker_component_1 = require('./project-tracker.component');
+var project_parent_component_1 = require('./projects/project-parent.component');
 //service
 var project_service_1 = require('./projects/project.service');
 //var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
@@ -39,10 +36,9 @@ var ProjectTrackerModule = (function () {
             declarations: [
                 project_list_component_1.ProjectListComponent,
                 project_edit_component_1.ProjectEditComponent,
-                project_tracker_component_1.ProjectTrackerComponent
+                project_parent_component_1.ProjectParentComponent
             ],
             providers: [
-                //CarService
                 project_service_1.ProjectService
             ]
         }), 

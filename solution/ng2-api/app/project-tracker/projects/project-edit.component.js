@@ -9,15 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_1 = require('./project');
-var project_service_1 = require('./project.service');
+var project_parent_component_1 = require('./project-parent.component');
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent(projectService, route, router) {
-        this.projectService = projectService;
-        this.route = route;
-        this.router = router;
-        this.model = new project_1.Project(0, '', '');
+    function ProjectEditComponent() {
         this.submitted = false;
         this.technology = [
             '.NET Technology',
@@ -25,26 +19,35 @@ var ProjectEditComponent = (function () {
             'MS Access FrontEnd + Backend'
         ];
     }
-    ProjectEditComponent.prototype.ngOnInit = function () {
-        //this.route.params
-        //.switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
-        //.subscribe(project => this.model = project);
+    ProjectEditComponent.prototype.backtoList = function () {
+        this.mainProject.viewpage = 0;
+        this.mainProject.refreshList();
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        this.projectService.putProject(this.model);
+        this.mainProject.saveRecord();
         setTimeout(function () {
-            _this.router.navigate(['/project-list']);
+            _this.submitted = false;
+            _this.backtoList();
         }, 2000);
     };
+    Object.defineProperty(ProjectEditComponent.prototype, "diagnostic", {
+        get: function () { return JSON.stringify(this.mainProject.selectedProject); },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', project_parent_component_1.ProjectParentComponent)
+    ], ProjectEditComponent.prototype, "mainProject", void 0);
     ProjectEditComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());

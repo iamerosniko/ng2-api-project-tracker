@@ -1,60 +1,45 @@
-<div class="panel-body">
-    <a class="btn btn-primary btn-sm" routerLink="/project-tracker">Back to List</a>
-    <hr />
-        <div [hidden]="!submitted">
-            <h3>Form successfully submitted!</h3>
-            <h4>Data: </h4>
-            <p>{{diagnostic}}</p>
-            <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
-        </div>
+<div [hidden]="!submitted">
+    <h3>Form successfully submitted!</h3>
+    <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
+</div>
+{{diagnostic}}
+<div [hidden]="submitted">
+    <br />
+    <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
     <h6>Project Edit Form</h6>
-    <div class="alert alert-danger" role="alert">
-        {{diagnostic}}
-    </div>
-    <div class="alert alert-info">
-        Form valid:
-        <span *ngIf="myForm.form.valid" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-        <span *ngIf="!myForm.form.valid" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-    </div>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        
         <div class="form-group">
             <label for="projectName">Project Name</label>
             <input 
-                id="projectName" 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="model.projectName"
-                required 
+                [(ngModel)]="mainProject.selectedProject.projectName"
                 name="projectName"
-                #projectName="ngModel"
+                #projectNameModel="ngModel"
+                required 
             >
-        </div>
-        <div [hidden]="projectName.valid || projectName.pristine" class="alert alert-danger">
-            Project Name is required! Please fill in a value.
         </div>
         <div class="form-group">
             <label for="description">Description</label>
             <input 
-                id="description" 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="model.description"
-                required 
+                [(ngModel)]="mainProject.selectedProject.description"
                 name="description"
-                #description="ngModel"
+                #descriptionModel="ngModel"
+                required 
             >
         </div>
-        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
-            Description is required! Please fill in a value.
-        </div>
+        
         <div class="form-group">
             <label for="technology">Technology</label>
             <select 
-                id="technology" 
-                class="form-control"
-                [(ngModel)]="model.technology"
-                required 
+                class="form-control" 
+                [(ngModel)]="mainProject.selectedProject.technology"
                 name="technology"
+                #technologyModel="ngModel"
+                required 
             >
                 <option *ngFor="let ft of technology" [value]="ft">{{ft}}</option>
             </select>
@@ -62,16 +47,18 @@
         <div class="form-group">
             <label for="owner">Owner</label>
             <input 
-                id="owner" 
-                class="form-control"
-                [(ngModel)]="model.owner"
-                required
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="mainProject.selectedProject.owner"
                 name="owner"
+                #ownerModel="ngModel"
+                required 
             >
         </div>
         <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
             Submit
         </button>
+        
     </form>
-    <hr />
 </div>
+<hr />

@@ -1,21 +1,34 @@
-<h3>Project List Component</h3>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Project Name</th>
-            <th>Description</th>
-            <th>Technology Used</th>
-            <th>Owner</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let project of projects" (click)="onSelect(project)">
-            <td>{{project.id}}</td>
-            <td>{{project.projectName}}</td>
-            <td>{{project.description}}</td>
-            <td>{{project.technology}}</td>
-            <td>{{project.owner}}</td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <h3>Project List Component</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Technology Used</th>
+                <th>Owner</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of mainProject.projectList">
+                <td>{{project.id}}</td>
+                <td>{{project.projectName}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.technology}}</td>
+                <td>{{project.owner}}</td>
+                <td>
+                    <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-edit" ></i>
+                    </a>
+               
+                    <a (click)="deleteProject(project.id)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-trash" ></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
+</div>
