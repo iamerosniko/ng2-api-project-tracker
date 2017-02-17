@@ -25,6 +25,8 @@
         <AssociationConnector Association="PTModel.FK_VTD_Link_Vulnerabilities_Testing_RT_VTD_Vulnerabilities_TT" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PTModel.NG2_Cars" Width="1.5" PointX="7.375" PointY="7.75" />
         <EntityTypeShape EntityType="PTModel.PT_Projects" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PTModel.PT_ProjectDetails" Width="1.5" PointX="10.625" PointY="6" />
+        <AssociationConnector Association="PTModel.FK_PT_ProjectDetails_PT_Projects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

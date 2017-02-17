@@ -1,4 +1,5 @@
 ﻿using ng2_api.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
@@ -10,29 +11,42 @@ namespace ng2_api.Controllers
     {
         public PTContext db = new PTContext();
         // GET api/projects
-        public IQueryable<PT_Projects> Get()
+        public List<PT_Projects_DTO> Get()
         {
-            //PT_Projects p = new PT_Projects
-            //{
-            //    pt_project_id = new Guid("646542ef-2d92-408e-a45b-f1a2c69f5ae7"),
-            //    pt_project_desc = "",
-            //    pt_project_name = "",
-            //    pt_project_owner = "",
-            //    pt_project_tech = ""
-            //};
+            IQueryable<PT_Projects> tempProjects = db.PT_Projects;
+            List<PT_Projects_DTO> projects = new List<PT_Projects_DTO>();
 
-            //List<PT_Projects> p2 = new List<PT_Projects>();
-            //p2.Add(p);
+            foreach (PT_Projects project in tempProjects)
+            {
+                projects.Add(new PT_Projects_DTO
+                {
+                    pt_project_id = project.pt_project_id,
+                    pt_project_deleted = project.pt_project_deleted,
+                    pt_project_desc = project.pt_project_desc,
+                    pt_project_name = project.pt_project_name,
+                    pt_project_owner = project.pt_project_owner,
+                    pt_project_show = project.pt_project_show,
+                    pt_project_tech = project.pt_project_tech
+                });
+            }
 
-            //return p2;
-            return db.PT_Projects;
-            
+            return projects;
         }
 
         // GET api/projects/5
-        public string Get(int id)
+        public PT_Projects_DTO Get(System.Guid projectID)
         {
-            return "value";
+            PT_Projects project = db.PT_Projects.Find(projectID);
+            return new PT_Projects_DTO
+            {
+                pt_project_id=project.pt_project_id,
+                pt_project_deleted=project.pt_project_deleted,
+                pt_project_desc=project.pt_project_desc,
+                pt_project_name=project.pt_project_name,
+                pt_project_owner=project.pt_project_owner,
+                pt_project_show=project.pt_project_show,
+                pt_project_tech=project.pt_project_tech
+            };
         }
 
         // POST api/projects

@@ -17,6 +17,25 @@
           <Property Name="topSpeed" Type="int" />
           <Property Name="power" Type="int" />
         </EntityType>
+        <EntityType Name="PT_ProjectDetails">
+          <Key>
+            <PropertyRef Name="pt_detail_id" />
+          </Key>
+          <Property Name="pt_detail_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pt_project_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pt_detail_priority" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="pt_detail_task" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="pt_detail_assignee" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="pt_detail_description" Type="nvarchar" MaxLength="250" />
+          <Property Name="pt_detail_deliverable" Type="nvarchar" MaxLength="250" />
+          <Property Name="pt_detail_eststart" Type="datetime" />
+          <Property Name="pt_detail_estend" Type="datetime" />
+          <Property Name="pt_detail_actstart" Type="datetime" />
+          <Property Name="pt_detail_actend" Type="datetime" />
+          <Property Name="pt_detail_status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pt_detail_deleted" Type="bit" Nullable="false" />
+          <Property Name="pt_detail_show" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="PT_Projects">
           <Key>
             <PropertyRef Name="pt_project_id" />
@@ -26,6 +45,8 @@
           <Property Name="pt_project_desc" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="pt_project_tech" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="pt_project_owner" Type="nvarchar" MaxLength="25" />
+          <Property Name="pt_project_deleted" Type="bit" Nullable="false" />
+          <Property Name="pt_project_show" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="set_group">
           <Key>
@@ -155,6 +176,18 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           <Property Name="VulnerabilityID" Type="int" Nullable="false" />
           <Property Name="TestEventID" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_PT_ProjectDetails_PT_Projects">
+          <End Role="PT_Projects" Type="Self.PT_Projects" Multiplicity="1" />
+          <End Role="PT_ProjectDetails" Type="Self.PT_ProjectDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PT_Projects">
+              <PropertyRef Name="pt_project_id" />
+            </Principal>
+            <Dependent Role="PT_ProjectDetails">
+              <PropertyRef Name="pt_project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VTD_Applications_TT_VTD_BusinessGroups_RT">
           <End Role="VTD_BusinessGroups_RT" Type="Self.VTD_BusinessGroups_RT" Multiplicity="1" />
           <End Role="VTD_Applications_TT" Type="Self.VTD_Applications_TT" Multiplicity="*" />
@@ -241,6 +274,7 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
         </Association>
         <EntityContainer Name="PTModelStoreContainer">
           <EntitySet Name="NG2_Cars" EntityType="Self.NG2_Cars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PT_ProjectDetails" EntityType="Self.PT_ProjectDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PT_Projects" EntityType="Self.PT_Projects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="set_group" EntityType="Self.set_group" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="set_module" EntityType="Self.set_module" Schema="dbo" store:Type="Tables" />
@@ -253,6 +287,10 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           <EntitySet Name="VTD_Vulnerabilities_TT" EntityType="Self.VTD_Vulnerabilities_TT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VTD_VulnerabilitiesApplications_LT" EntityType="Self.VTD_VulnerabilitiesApplications_LT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VTD_VulnerabilitiesTestings_LT" EntityType="Self.VTD_VulnerabilitiesTestings_LT" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PT_ProjectDetails_PT_Projects" Association="Self.FK_PT_ProjectDetails_PT_Projects">
+            <End Role="PT_Projects" EntitySet="PT_Projects" />
+            <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
+          </AssociationSet>
           <AssociationSet Name="FK_VTD_Applications_TT_VTD_BusinessGroups_RT" Association="Self.FK_VTD_Applications_TT_VTD_BusinessGroups_RT">
             <End Role="VTD_BusinessGroups_RT" EntitySet="VTD_BusinessGroups_RT" />
             <End Role="VTD_Applications_TT" EntitySet="VTD_Applications_TT" />
@@ -538,6 +576,11 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           </AssociationSet>
           <EntitySet Name="NG2_Cars" EntityType="PTModel.NG2_Cars" />
           <EntitySet Name="PT_Projects" EntityType="PTModel.PT_Projects" />
+          <EntitySet Name="PT_ProjectDetails" EntityType="PTModel.PT_ProjectDetails" />
+          <AssociationSet Name="FK_PT_ProjectDetails_PT_Projects" Association="PTModel.FK_PT_ProjectDetails_PT_Projects">
+            <End Role="PT_Projects" EntitySet="PT_Projects" />
+            <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="NG2_Cars">
           <Key>
@@ -560,7 +603,42 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           <Property Name="pt_project_desc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pt_project_tech" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pt_project_owner" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="pt_project_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="pt_project_show" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PT_ProjectDetails" Relationship="PTModel.FK_PT_ProjectDetails_PT_Projects" FromRole="PT_Projects" ToRole="PT_ProjectDetails" />
         </EntityType>
+        <EntityType Name="PT_ProjectDetails">
+          <Key>
+            <PropertyRef Name="pt_detail_id" />
+          </Key>
+          <Property Name="pt_detail_id" Type="Guid" Nullable="false" />
+          <Property Name="pt_project_id" Type="Guid" Nullable="false" />
+          <Property Name="pt_detail_priority" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_task" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_assignee" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_deliverable" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_eststart" Type="DateTime" Precision="3" />
+          <Property Name="pt_detail_estend" Type="DateTime" Precision="3" />
+          <Property Name="pt_detail_actstart" Type="DateTime" Precision="3" />
+          <Property Name="pt_detail_actend" Type="DateTime" Precision="3" />
+          <Property Name="pt_detail_status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pt_detail_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="pt_detail_show" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PT_Projects" Relationship="PTModel.FK_PT_ProjectDetails_PT_Projects" FromRole="PT_ProjectDetails" ToRole="PT_Projects" />
+        </EntityType>
+        <Association Name="FK_PT_ProjectDetails_PT_Projects">
+          <End Type="PTModel.PT_Projects" Role="PT_Projects" Multiplicity="1" />
+          <End Type="PTModel.PT_ProjectDetails" Role="PT_ProjectDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PT_Projects">
+              <PropertyRef Name="pt_project_id" />
+            </Principal>
+            <Dependent Role="PT_ProjectDetails">
+              <PropertyRef Name="pt_project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -706,11 +784,33 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           <EntitySetMapping Name="PT_Projects">
             <EntityTypeMapping TypeName="PTModel.PT_Projects">
               <MappingFragment StoreEntitySet="PT_Projects">
+                <ScalarProperty Name="pt_project_show" ColumnName="pt_project_show" />
+                <ScalarProperty Name="pt_project_deleted" ColumnName="pt_project_deleted" />
                 <ScalarProperty Name="pt_project_owner" ColumnName="pt_project_owner" />
                 <ScalarProperty Name="pt_project_tech" ColumnName="pt_project_tech" />
                 <ScalarProperty Name="pt_project_desc" ColumnName="pt_project_desc" />
                 <ScalarProperty Name="pt_project_name" ColumnName="pt_project_name" />
                 <ScalarProperty Name="pt_project_id" ColumnName="pt_project_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PT_ProjectDetails">
+            <EntityTypeMapping TypeName="PTModel.PT_ProjectDetails">
+              <MappingFragment StoreEntitySet="PT_ProjectDetails">
+                <ScalarProperty Name="pt_detail_show" ColumnName="pt_detail_show" />
+                <ScalarProperty Name="pt_detail_deleted" ColumnName="pt_detail_deleted" />
+                <ScalarProperty Name="pt_detail_status" ColumnName="pt_detail_status" />
+                <ScalarProperty Name="pt_detail_actend" ColumnName="pt_detail_actend" />
+                <ScalarProperty Name="pt_detail_actstart" ColumnName="pt_detail_actstart" />
+                <ScalarProperty Name="pt_detail_estend" ColumnName="pt_detail_estend" />
+                <ScalarProperty Name="pt_detail_eststart" ColumnName="pt_detail_eststart" />
+                <ScalarProperty Name="pt_detail_deliverable" ColumnName="pt_detail_deliverable" />
+                <ScalarProperty Name="pt_detail_description" ColumnName="pt_detail_description" />
+                <ScalarProperty Name="pt_detail_assignee" ColumnName="pt_detail_assignee" />
+                <ScalarProperty Name="pt_detail_task" ColumnName="pt_detail_task" />
+                <ScalarProperty Name="pt_detail_priority" ColumnName="pt_detail_priority" />
+                <ScalarProperty Name="pt_project_id" ColumnName="pt_project_id" />
+                <ScalarProperty Name="pt_detail_id" ColumnName="pt_detail_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

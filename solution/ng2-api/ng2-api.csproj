@@ -187,9 +187,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PTContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PT_ProjectDetails.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PT_Projects.cs">
       <DependentUpon>PTContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PT_Projects_DTO.cs" />
     <Compile Include="Models\set_group.cs">
       <DependentUpon>PTContext.tt</DependentUpon>
     </Compile>

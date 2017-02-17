@@ -14,10 +14,19 @@ namespace ng2_api.Models
     
     public partial class PT_Projects
     {
+        public PT_Projects()
+        {
+            this.PT_ProjectDetails = new HashSet<PT_ProjectDetails>();
+        }
+    
         public System.Guid pt_project_id { get; set; }
         public string pt_project_name { get; set; }
         public string pt_project_desc { get; set; }
         public string pt_project_tech { get; set; }
         public string pt_project_owner { get; set; }
+        public bool pt_project_deleted { get; set; }
+        public bool pt_project_show { get; set; }
+    
+        public virtual ICollection<PT_ProjectDetails> PT_ProjectDetails { get; set; }
     }
 }

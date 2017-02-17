@@ -38,5 +38,6 @@ namespace ng2_api.Models
         public virtual DbSet<VTD_VulnerabilitiesTestings_LT> VTD_VulnerabilitiesTestings_LT { get; set; }
         public virtual DbSet<NG2_Cars> NG2_Cars { get; set; }
         public virtual DbSet<PT_Projects> PT_Projects { get; set; }
+        public virtual DbSet<PT_ProjectDetails> PT_ProjectDetails { get; set; }
     }
 }
