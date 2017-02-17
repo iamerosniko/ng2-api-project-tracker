@@ -33,7 +33,8 @@ var ProjectParentComponent = (function () {
         this.isNew = false;
     };
     ProjectParentComponent.prototype.deleteRecord = function (project) {
-        this.projectService.deleteProject(project);
+        project.pt_project_deleted = true;
+        this.projectService.putProject(project);
     };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();

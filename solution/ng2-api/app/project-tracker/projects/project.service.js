@@ -42,19 +42,10 @@ var ProjectService = (function () {
     };
     ProjectService.prototype.putProject = function (project) {
         var url = this.projectsUrl + "/" + project.pt_project_id;
-        alert("put");
         return this.http
             .put(url, JSON.stringify(project), { headers: this.headers })
             .toPromise()
             .then(function () { return project; })
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.deleteProject = function (project) {
-        var url = this.projectsUrl + "/" + project.pt_project_id;
-        return this.http
-            .put(url, JSON.stringify(project), { headers: this.headers })
-            .toPromise()
-            .then(function () { return null; })
             .catch(this.handleError);
     };
     ProjectService.prototype.handleError = function (error) {

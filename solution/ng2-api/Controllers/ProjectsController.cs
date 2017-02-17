@@ -70,7 +70,7 @@ namespace ng2_api.Controllers
         }
 
         // DELETE api/projects/5
-
+        [ResponseType(typeof(PT_Projects))]
         public void Delete(System.Guid projectID)
         {
             PT_Projects project = db.PT_Projects.Find(projectID);
