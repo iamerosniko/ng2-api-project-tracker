@@ -17,14 +17,14 @@ var ProjectParentComponent = (function () {
         this.projectService = projectService;
         this.viewpage = 0;
         this.isNew = false;
-        this.selectedProject = new project_1.Project('', '', '', '', '');
+        this.selectedProject = new project_1.Project('', '', '', '', '', false, true);
     }
     ProjectParentComponent.prototype.refreshList = function () {
         var _this = this;
         this.projectService.getProjects().then(function (project) { return _this.projectList = project; });
     };
     ProjectParentComponent.prototype.newRecord = function () {
-        this.selectedProject = new project_1.Project(angular2_uuid_1.UUID.UUID(), '', '', '', '');
+        this.selectedProject = new project_1.Project(angular2_uuid_1.UUID.UUID(), '', '', '', '', false, true);
         this.isNew = true;
         this.viewpage = 1;
     };
@@ -32,8 +32,8 @@ var ProjectParentComponent = (function () {
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
         this.isNew = false;
     };
-    ProjectParentComponent.prototype.deleteRecord = function (id) {
-        this.projectService.deleteProject(id);
+    ProjectParentComponent.prototype.deleteRecord = function (project) {
+        this.projectService.deleteProject(project);
     };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();

@@ -16,11 +16,12 @@ var ProjectListComponent = (function () {
     ProjectListComponent.prototype.newProject = function () {
         this.mainProject.newRecord();
     };
-    ProjectListComponent.prototype.deleteProject = function (projectid) {
-        this.mainProject.deleteRecord(projectid);
+    ProjectListComponent.prototype.deleteProject = function (project) {
+        this.mainProject.deleteRecord(project);
         this.mainProject.refreshList();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
+        this.mainProject.isNew = false;
         this.mainProject.viewpage = 1;
         this.mainProject.selectedProject = project;
     };

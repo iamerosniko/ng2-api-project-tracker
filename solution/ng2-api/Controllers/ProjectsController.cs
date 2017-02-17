@@ -13,9 +13,13 @@ namespace ng2_api.Controllers
         // GET api/projects
         public List<PT_Projects_DTO> Get()
         {
-            IQueryable<PT_Projects> tempProjects = db.PT_Projects;
             List<PT_Projects_DTO> projects = new List<PT_Projects_DTO>();
-
+            //IQueryable<PT_Projects> tempProjects = db.PT_Projects;
+            IQueryable<PT_Projects> tempProjects = from l in db.PT_Projects
+                                                   where l.pt_project_show == true
+                                                   where l.pt_project_deleted == false
+                                                   select l;
+                                                   
             foreach (PT_Projects project in tempProjects)
             {
                 projects.Add(new PT_Projects_DTO
@@ -66,8 +70,13 @@ namespace ng2_api.Controllers
         }
 
         // DELETE api/projects/5
-        public void Delete(int id)
+
+        public void Delete(System.Guid projectID)
         {
+            PT_Projects project = db.PT_Projects.Find(projectID);
+            project.pt_project_deleted = !project.pt_project_deleted;
+            Put(project);
+
         }
     }
 }

@@ -49,9 +49,10 @@ var ProjectService = (function () {
             .then(function () { return project; })
             .catch(this.handleError);
     };
-    ProjectService.prototype.deleteProject = function (id) {
-        var url = this.projectsUrl + "/" + id;
-        return this.http.delete(url, { headers: this.headers })
+    ProjectService.prototype.deleteProject = function (project) {
+        var url = this.projectsUrl + "/" + project.pt_project_id;
+        return this.http
+            .put(url, JSON.stringify(project), { headers: this.headers })
             .toPromise()
             .then(function () { return null; })
             .catch(this.handleError);
