@@ -194,39 +194,6 @@
       <DependentUpon>PTContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PT_Projects_DTO.cs" />
-    <Compile Include="Models\set_group.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\set_module.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\set_user.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_Applications_TT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_BusinessGroups_RT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_BusinessGroupUsers_LT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_TestEvents_TT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_VulnerabilitiesApplications_LT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_VulnerabilitiesTestings_LT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VTD_Vulnerabilities_TT.cs">
-      <DependentUpon>PTContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

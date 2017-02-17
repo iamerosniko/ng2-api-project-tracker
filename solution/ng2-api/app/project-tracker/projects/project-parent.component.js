@@ -35,6 +35,7 @@ var ProjectParentComponent = (function () {
     ProjectParentComponent.prototype.deleteRecord = function (project) {
         project.pt_project_deleted = true;
         this.projectService.putProject(project);
+        this.refreshList();
     };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();
@@ -43,7 +44,7 @@ var ProjectParentComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: "project-parent.component.html"
-        }), 
+        }),
         __metadata('design:paramtypes', [project_service_1.ProjectService])
     ], ProjectParentComponent);
     return ProjectParentComponent;
