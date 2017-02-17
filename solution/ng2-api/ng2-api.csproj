@@ -286,7 +286,6 @@
     <Content Include="app\project-tracker\projects\project-parent.component.js" />
     <Content Include="app\project-tracker\projects\project.js" />
     <Content Include="app\project-tracker\projects\project.service.js" />
-    <Content Include="app\project-tracker\projects\project.service.ts" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

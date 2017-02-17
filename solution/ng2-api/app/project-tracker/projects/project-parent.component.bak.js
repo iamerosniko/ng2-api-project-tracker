@@ -17,7 +17,7 @@ var ProjectParentComponent = (function () {
         this.projectService = projectService;
         this.viewpage = 0;
         this.isNew = false;
-        this.selectedProject = new project_1.Project('', '', '', '', '');
+        this.selectedProject = new project_1.Project(angular2_uuid_1.UUID.UUID(), '', '', '', '');
     }
     ProjectParentComponent.prototype.refreshList = function () {
         var _this = this;
@@ -30,7 +30,6 @@ var ProjectParentComponent = (function () {
     };
     ProjectParentComponent.prototype.saveRecord = function () {
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
-        this.isNew = false;
     };
     ProjectParentComponent.prototype.deleteRecord = function (id) {
         this.projectService.deleteProject(id);
