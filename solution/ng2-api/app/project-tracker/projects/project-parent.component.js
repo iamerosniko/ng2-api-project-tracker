@@ -33,9 +33,12 @@ var ProjectParentComponent = (function () {
         this.isNew = false;
     };
     ProjectParentComponent.prototype.deleteRecord = function (project) {
+        var _this = this;
         project.pt_project_deleted = true;
         this.projectService.putProject(project);
-        this.refreshList();
+        setTimeout(function () {
+            _this.refreshList();
+        }, 750);
     };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();
