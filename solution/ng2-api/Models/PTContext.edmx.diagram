@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b649213857f14e53974b6a965197c80f" Name="Diagram1">
+        <EntityTypeShape EntityType="PTModel.set_group" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.set_module" Width="1.5" PointX="2.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.set_user" Width="1.5" PointX="1.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_Applications_TT" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_BusinessGroups_RT" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_BusinessGroupUsers_LT" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_TestEvents_TT" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_Vulnerabilities_TT" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_VulnerabilitiesApplications_LT" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTModel.VTD_VulnerabilitiesTestings_LT" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PTModel.FK_VTD_BusinessGroupUsers_LT_set_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_Applications_TT_VTD_BusinessGroups_RT" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_Link_Vulnerabilities_Application_RT_VTD_Application_TT" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_BusinessGroupUsers_LT_VTD_BusinessGroups_RT" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_Link_Vulnerabilities_Testing_RT_VTD_Test_Event_RT" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_Link_Vulnerabilities_Application_RT_VTD_Vulnerabilities_TT" ManuallyRouted="false" />
+        <AssociationConnector Association="PTModel.FK_VTD_Link_Vulnerabilities_Testing_RT_VTD_Vulnerabilities_TT" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PTModel.NG2_Cars" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PTModel.PT_Projects" Width="1.5" PointX="8.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

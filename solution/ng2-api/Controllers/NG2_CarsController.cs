@@ -13,7 +13,7 @@ namespace ng2_api.Controllers
 {
     public class NG2_CarsController : ApiController
     {
-        private NG2Context db = new NG2Context();
+        private PTContext db = new PTContext();
 
         // GET: api/NG2_Cars
         public IQueryable<NG2_Cars> GetNG2_Cars()

@@ -13,7 +13,7 @@ namespace ng2_api.Models
         }
 
         public virtual DbSet<NG2_Cars> NG2_Cars { get; set; }
-
+        //public virtual DbSet<PT_Projects> PT_Projects { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NG2_Cars>()

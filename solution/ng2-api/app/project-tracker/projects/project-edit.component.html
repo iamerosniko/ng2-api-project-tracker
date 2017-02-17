@@ -8,15 +8,23 @@
     <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
     <h6>Project Edit Form</h6>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-        
+        <div class="form-group">
+            <label for="projectid">Project id</label>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="mainProject.selectedProject.pt_project_id"
+                   name="projectid"
+                   #pt_project_id="ngModel"
+                   required>
+        </div>
         <div class="form-group">
             <label for="projectName">Project Name</label>
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.projectName"
+                [(ngModel)]="mainProject.selectedProject.pt_project_name"
                 name="projectName"
-                #projectNameModel="ngModel"
+                #pt_project_name="ngModel"
                 required 
             >
         </div>
@@ -25,9 +33,9 @@
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.description"
+                [(ngModel)]="mainProject.selectedProject.pt_project_desc"
                 name="description"
-                #descriptionModel="ngModel"
+                #pt_project_desc="ngModel"
                 required 
             >
         </div>
@@ -36,9 +44,9 @@
             <label for="technology">Technology</label>
             <select 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.technology"
+                [(ngModel)]="mainProject.selectedProject.pt_project_tech"
                 name="technology"
-                #technologyModel="ngModel"
+                #pt_project_tech="ngModel"
                 required 
             >
                 <option *ngFor="let ft of technology" [value]="ft">{{ft}}</option>
@@ -49,9 +57,9 @@
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.owner"
+                [(ngModel)]="mainProject.selectedProject.pt_project_owner"
                 name="owner"
-                #ownerModel="ngModel"
+                #pt_project_owner="ngModel"
                 required 
             >
         </div>

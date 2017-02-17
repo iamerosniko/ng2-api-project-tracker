@@ -12,14 +12,13 @@ namespace ng2_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NG2_Cars
+    public partial class VTD_VulnerabilitiesTestings_LT
     {
-        public int id { get; set; }
-        public string brand { get; set; }
-        public string model { get; set; }
-        public string fuelType { get; set; }
-        public string bodyStyle { get; set; }
-        public Nullable<int> topSpeed { get; set; }
-        public Nullable<int> power { get; set; }
+        public int VulnerabilityTestingID { get; set; }
+        public int VulnerabilityID { get; set; }
+        public int TestEventID { get; set; }
+    
+        public virtual VTD_TestEvents_TT VTD_TestEvents_TT { get; set; }
+        public virtual VTD_Vulnerabilities_TT VTD_Vulnerabilities_TT { get; set; }
     }
 }

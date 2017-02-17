@@ -12,14 +12,12 @@ namespace ng2_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NG2_Cars
+    public partial class sysdiagram
     {
-        public int id { get; set; }
-        public string brand { get; set; }
-        public string model { get; set; }
-        public string fuelType { get; set; }
-        public string bodyStyle { get; set; }
-        public Nullable<int> topSpeed { get; set; }
-        public Nullable<int> power { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

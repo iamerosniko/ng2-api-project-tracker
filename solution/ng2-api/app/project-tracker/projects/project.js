@@ -1,11 +1,11 @@
 "use strict";
 var Project = (function () {
-    function Project(id, projectName, description, technology, owner) {
-        this.id = id;
-        this.projectName = projectName;
-        this.description = description;
-        this.technology = technology;
-        this.owner = owner;
+    function Project(pt_project_id, pt_project_name, pt_project_desc, pt_project_tech, pt_project_owner) {
+        this.pt_project_id = pt_project_id;
+        this.pt_project_name = pt_project_name;
+        this.pt_project_desc = pt_project_desc;
+        this.pt_project_tech = pt_project_tech;
+        this.pt_project_owner = pt_project_owner;
     }
     return Project;
 }());

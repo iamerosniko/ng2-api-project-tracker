@@ -12,14 +12,13 @@ namespace ng2_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NG2_Cars
+    public partial class VTD_BusinessGroupUsers_LT
     {
-        public int id { get; set; }
-        public string brand { get; set; }
-        public string model { get; set; }
-        public string fuelType { get; set; }
-        public string bodyStyle { get; set; }
-        public Nullable<int> topSpeed { get; set; }
-        public Nullable<int> power { get; set; }
+        public int BusinessGroupUserID { get; set; }
+        public int BusinessGroupID { get; set; }
+        public string user_id { get; set; }
+    
+        public virtual set_user set_user { get; set; }
+        public virtual VTD_BusinessGroups_RT VTD_BusinessGroups_RT { get; set; }
     }
 }

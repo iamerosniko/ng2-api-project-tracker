@@ -12,14 +12,11 @@ namespace ng2_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NG2_Cars
+    public partial class set_group
     {
-        public int id { get; set; }
-        public string brand { get; set; }
-        public string model { get; set; }
-        public string fuelType { get; set; }
-        public string bodyStyle { get; set; }
-        public Nullable<int> topSpeed { get; set; }
-        public Nullable<int> power { get; set; }
+        public string grp_id { get; set; }
+        public string grp_name { get; set; }
+        public string grp_desc { get; set; }
+        public Nullable<System.DateTime> created_date { get; set; }
     }
 }

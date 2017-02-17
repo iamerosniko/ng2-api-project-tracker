@@ -169,7 +169,60 @@
     </Compile>
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\NG2Context.cs" />
-    <Compile Include="Models\NG2_Cars.cs" />
+    <Compile Include="Models\NG2_Cars.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PTContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PTContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PTContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PT_Projects.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\set_group.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\set_module.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\set_user.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_Applications_TT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_BusinessGroups_RT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_BusinessGroupUsers_LT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_TestEvents_TT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_VulnerabilitiesApplications_LT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_VulnerabilitiesTestings_LT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VTD_Vulnerabilities_TT.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +258,19 @@
     <Content Include="app\file\upload\upload-single.component.js" />
     <Content Include="app\file\upload\upload.component.js" />
     <Content Include="app\main.js" />
-    <Content Include="app\project-tracker\project-tracker.component.js" />
+    <Content Include="app\project-tracker\project-details\detail-list.component.html" />
+    <Content Include="app\project-tracker\project-details\detail-list.component.js" />
+    <Content Include="app\project-tracker\project-details\detail-list.component.ts" />
+    <Content Include="app\project-tracker\project-details\detail-parent.component.html" />
+    <Content Include="app\project-tracker\project-details\detail-parent.component.js" />
+    <Content Include="app\project-tracker\project-details\detail-parent.component.ts" />
+    <Content Include="app\project-tracker\project-details\detail.component.html" />
+    <Content Include="app\project-tracker\project-details\detail.component.js" />
+    <Content Include="app\project-tracker\project-details\detail.component.ts" />
+    <Content Include="app\project-tracker\project-details\detail.js" />
+    <Content Include="app\project-tracker\project-details\detail.service.js" />
+    <Content Include="app\project-tracker\project-details\detail.service.ts" />
+    <Content Include="app\project-tracker\project-details\detail.ts" />
     <Content Include="app\project-tracker\project-tracker.module.js" />
     <Content Include="app\project-tracker\project-tracker.routing.js" />
     <Content Include="app\project-tracker\projects\project-data.service.js" />
@@ -213,8 +278,11 @@
     <Content Include="app\project-tracker\projects\project-edit.component.js" />
     <Content Include="app\project-tracker\projects\project-list.component.html" />
     <Content Include="app\project-tracker\projects\project-list.component.js" />
+    <Content Include="app\project-tracker\projects\project-parent.component.html" />
+    <Content Include="app\project-tracker\projects\project-parent.component.js" />
     <Content Include="app\project-tracker\projects\project.js" />
     <Content Include="app\project-tracker\projects\project.service.js" />
+    <Content Include="app\project-tracker\projects\project.service.ts" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -473,13 +541,32 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\PTContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PTContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PTContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PTContext.edmx</DependentUpon>
+      <LastGenOutput>PTContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PTContext.edmx.diagram">
+      <DependentUpon>PTContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PTContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PTContext.edmx</DependentUpon>
+      <LastGenOutput>PTContext.cs</LastGenOutput>
+    </Content>
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>

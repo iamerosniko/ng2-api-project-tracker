@@ -13,11 +13,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let project of mainProject.projectList">
-                <td>{{project.id}}</td>
-                <td>{{project.projectName}}</td>
-                <td>{{project.description}}</td>
-                <td>{{project.technology}}</td>
-                <td>{{project.owner}}</td>
+                <td>{{project.pt_project_id}}</td>
+                <td>{{project.pt_project_name}}</td>
+                <td>{{project.pt_project_desc}}</td>
+                <td>{{project.pt_project_tech}}</td>
+                <td>{{project.pt_project_owner}}</td>
                 <td>
                     <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-edit" ></i>
