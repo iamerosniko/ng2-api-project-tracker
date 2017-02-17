@@ -25,17 +25,6 @@ namespace ng2_api.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<set_group> set_group { get; set; }
-        public virtual DbSet<set_module> set_module { get; set; }
-        public virtual DbSet<set_user> set_user { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<VTD_Applications_TT> VTD_Applications_TT { get; set; }
-        public virtual DbSet<VTD_BusinessGroups_RT> VTD_BusinessGroups_RT { get; set; }
-        public virtual DbSet<VTD_BusinessGroupUsers_LT> VTD_BusinessGroupUsers_LT { get; set; }
-        public virtual DbSet<VTD_TestEvents_TT> VTD_TestEvents_TT { get; set; }
-        public virtual DbSet<VTD_Vulnerabilities_TT> VTD_Vulnerabilities_TT { get; set; }
-        public virtual DbSet<VTD_VulnerabilitiesApplications_LT> VTD_VulnerabilitiesApplications_LT { get; set; }
-        public virtual DbSet<VTD_VulnerabilitiesTestings_LT> VTD_VulnerabilitiesTestings_LT { get; set; }
         public virtual DbSet<NG2_Cars> NG2_Cars { get; set; }
         public virtual DbSet<PT_Projects> PT_Projects { get; set; }
         public virtual DbSet<PT_ProjectDetails> PT_ProjectDetails { get; set; }

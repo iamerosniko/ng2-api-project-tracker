@@ -19,7 +19,7 @@ namespace ng2_api.Controllers
                                                    where l.pt_project_show == true
                                                    where l.pt_project_deleted == false
                                                    select l;
-                                                   
+  
             foreach (PT_Projects project in tempProjects)
             {
                 projects.Add(new PT_Projects_DTO
@@ -33,7 +33,6 @@ namespace ng2_api.Controllers
                     pt_project_tech = project.pt_project_tech
                 });
             }
-
             return projects;
         }
 
@@ -67,16 +66,6 @@ namespace ng2_api.Controllers
         {
             db.Entry(project).State = EntityState.Modified;
             db.SaveChanges();
-        }
-
-        // DELETE api/projects/5
-        [ResponseType(typeof(PT_Projects))]
-        public void Delete(System.Guid projectID)
-        {
-            PT_Projects project = db.PT_Projects.Find(projectID);
-            project.pt_project_deleted = !project.pt_project_deleted;
-            Put(project);
-
         }
     }
 }
