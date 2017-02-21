@@ -8,7 +8,7 @@
     <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
     <h6>Project Edit Form</h6>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-        <div class="form-group">
+        <div class="form-group" [hidden]="true">
             <label for="projectid">Project id</label>
             <input type="text"
                    class="form-control"
