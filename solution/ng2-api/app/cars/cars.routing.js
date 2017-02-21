@@ -17,7 +17,7 @@ var car_edit_component_1 = require('./car-edit.component');
 var carsRoutes = [
     { path: 'cars', component: cars_list_component_1.CarsListComponent },
     { path: 'car/create', component: car_form_component_1.CarFormComponent },
-    { path: 'car/:id', component: car_detail_component_1.CarDetailComponent },
+    { path: 'car/:id', component: car_detail_component_1.CarDetailComponent },  
     { path: 'caredit/:id', component: car_edit_component_1.CarEditComponent }
 ];
 var CarsRouting = (function () {
@@ -27,7 +27,7 @@ var CarsRouting = (function () {
         core_1.NgModule({
             imports: [router_1.RouterModule.forChild(carsRoutes)],
             exports: [router_1.RouterModule]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], CarsRouting);
     return CarsRouting;

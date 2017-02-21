@@ -22,7 +22,6 @@ var CarDetailComponent = (function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.carService.getCar(+params['id']); }) //the + value will convert id to number type
-            .subscribe(function (car) { return _this.currentCar = car; });
     };
     CarDetailComponent.prototype.onDeleteCar = function (id) {
         this.carService.deleteCar(id);
@@ -32,7 +31,7 @@ var CarDetailComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'car-detail.component.html'
-        }), 
+        }),
         __metadata('design:paramtypes', [car_service_1.CarService, router_1.ActivatedRoute, router_1.Router])
     ], CarDetailComponent);
     return CarDetailComponent;
