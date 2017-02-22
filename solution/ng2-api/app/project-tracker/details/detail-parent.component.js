@@ -54,8 +54,8 @@ var DetailParentComponent = (function () {
         alert(this.projectID);
     };
     DetailParentComponent.prototype.ngOnInit = function () {
-        this.refreshList();
         this.getSelectedProjectID();
+        this.refreshList();
     };
     DetailParentComponent = __decorate([
         core_1.Component({
