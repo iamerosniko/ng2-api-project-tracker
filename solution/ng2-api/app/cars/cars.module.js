@@ -13,13 +13,14 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 //Imports for loading & configuring the in-memory web api
-//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService }  from './in-memory-data.service';
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var in_memory_data_service_1 = require('./in-memory-data.service');
 var car_detail_component_1 = require('./car-detail.component');
 var car_form_component_1 = require('./car-form.component');
 var cars_list_component_1 = require('./cars-list.component');
 var car_edit_component_1 = require('./car-edit.component');
 var car_service_1 = require('./car.service');
+//import { CarService } from './carP.service'
 var cars_routing_1 = require('./cars.routing');
 var CarModule = (function () {
     function CarModule() {
@@ -30,7 +31,7 @@ var CarModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                //InMemoryWebApiModule.forRoot(InMemoryDataService),
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 cars_routing_1.CarsRouting
             ],
             declarations: [

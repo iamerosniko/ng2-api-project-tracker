@@ -23,12 +23,8 @@ var CarsListComponent = (function () {
     CarsListComponent.prototype.ngOnInit = function () {
         this.getCars();
     };
-    //CarsListComponent.prototype.onSelect = function (car) {
-    //    this.router.navigate(['/car', car.id]);
-    //};
     CarsListComponent.prototype.onSelect = function (car) {
         this.router.navigate(['/car', car.id]);
-        //this.router.navigate(['/car', { id: car.id } ]);
     };
     CarsListComponent = __decorate([
         core_1.Component({
