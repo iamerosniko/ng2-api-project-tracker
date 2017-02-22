@@ -1,22 +1,23 @@
 "use strict";
+var angular2_uuid_1 = require('angular2-uuid');
 var ProjectDataService = (function () {
     function ProjectDataService() {
     }
     ProjectDataService.prototype.createDb = function () {
         var projects = [
             {
-                id: 1,
-                projectName: "sample 1",
-                description: "desc",
-                technology: ".Net Projects",
-                owner: "eros niko"
+                pt_project_id: angular2_uuid_1.UUID.UUID(),
+                pt_project_name: "sample 1",
+                pt_project_desc: "desc",
+                pt_project_tech: "MS Access FrontEnd + Backend",
+                pt_project_owner: "eros niko"
             },
             {
-                id: 2,
-                projectName: "sample 2",
-                description: "desc",
-                technology: ".Net Projects",
-                owner: "eros niko"
+                pt_project_id: angular2_uuid_1.UUID.UUID(),
+                pt_project_name: "sample 2",
+                pt_project_desc: "desc",
+                pt_project_tech: "MS Access FrontEnd + Backend",
+                pt_project_owner: "eros niko"
             }
         ];
         return { projects: projects };

@@ -25,6 +25,9 @@ var ProjectListComponent = (function () {
         this.mainProject.viewpage = 1;
         this.mainProject.selectedProject = project;
     };
+    ProjectListComponent.prototype.gotoDetailSelect = function (project) {
+        this.mainProject.gotoDetail(project);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', project_parent_component_1.ProjectParentComponent)

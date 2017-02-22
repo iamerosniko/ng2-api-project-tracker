@@ -9,11 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var project_1 = require('./project');
 var project_service_1 = require('./project.service');
 var angular2_uuid_1 = require('angular2-uuid');
 var ProjectParentComponent = (function () {
-    function ProjectParentComponent(projectService) {
+    function ProjectParentComponent(router, projectService) {
+        this.router = router;
         this.projectService = projectService;
         this.viewpage = 0;
         this.isNew = false;
@@ -42,6 +44,9 @@ var ProjectParentComponent = (function () {
             }, 750);
         }
     };
+    ProjectParentComponent.prototype.gotoDetail = function (project) {
+        this.router.navigate(['/project', project.pt_project_id]);
+    };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();
     };
@@ -49,8 +54,8 @@ var ProjectParentComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: "project-parent.component.html"
-        }),
-        __metadata('design:paramtypes', [project_service_1.ProjectService])
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
     ], ProjectParentComponent);
     return ProjectParentComponent;
 }());

@@ -16,10 +16,15 @@ var http_1 = require('@angular/http');
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
 var project_parent_component_1 = require('./projects/project-parent.component');
+//Details
+var detail_list_component_1 = require('./detail/detail-list.component');
+var detail_edit_component_1 = require('./detail/detail-edit.component');
+var detail_parent_component_1 = require('./detail/detail-parent.component');
 //service
 var project_service_1 = require('./projects/project.service');
-//var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
-//var project_data_service_1 = require('./projects/project-data.service');
+var detail_service_1 = require('./detail/detail.service');
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var project_data_service_1 = require('./projects/project-data.service');
 var project_tracker_routing_1 = require('./project-tracker.routing');
 var ProjectTrackerModule = (function () {
     function ProjectTrackerModule() {
@@ -30,16 +35,19 @@ var ProjectTrackerModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                //angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(project_data_service_1.ProjectDataService),
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(project_data_service_1.ProjectDataService),
                 project_tracker_routing_1.ProjectTrackerRouting
             ],
             declarations: [
                 project_list_component_1.ProjectListComponent,
                 project_edit_component_1.ProjectEditComponent,
-                project_parent_component_1.ProjectParentComponent
+                project_parent_component_1.ProjectParentComponent,
+                detail_list_component_1.DetailListComponent,
+                detail_edit_component_1.DetailEditComponent,
+                detail_parent_component_1.DetailParentComponent
             ],
             providers: [
-                project_service_1.ProjectService
+                project_service_1.ProjectService, detail_service_1.DetailService
             ]
         }), 
         __metadata('design:paramtypes', [])

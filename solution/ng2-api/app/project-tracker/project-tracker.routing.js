@@ -10,10 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+//component
+//Projects
 var project_parent_component_1 = require('./projects/project-parent.component');
+//Details
+var detail_parent_component_1 = require('./detail/detail-parent.component');
 var projectTrackerRoutes = [
     //paths
-    { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent }
+    { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent },
+    { path: 'project/:id', component: detail_parent_component_1.DetailParentComponent },
 ];
 var ProjectTrackerRouting = (function () {
     function ProjectTrackerRouting() {
