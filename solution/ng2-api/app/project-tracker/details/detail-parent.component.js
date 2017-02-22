@@ -51,7 +51,6 @@ var DetailParentComponent = (function () {
         this.route.params.subscribe(function (params) {
             _this.projectID = params['id'];
         });
-        alert(this.projectID);
     };
     DetailParentComponent.prototype.ngOnInit = function () {
         this.getSelectedProjectID();

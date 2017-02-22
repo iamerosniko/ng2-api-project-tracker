@@ -34,12 +34,11 @@ var DetailService = (function () {
     //       .catch(this.handleError);
     //}
     DetailService.prototype.getDetails = function (id) {
-        var url = this.detailsUrl + "/?ID=" + id;
-        alert("me");
+        var url = this.detailsUrl + "/?projectID=" + id;
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json().data; }) //testing
+            .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
     DetailService.prototype.getDetail = function (id) {
@@ -47,7 +46,7 @@ var DetailService = (function () {
         return this.http
             .get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; }) // testing
+            .then(function (response) { return response.json(); }) // testing
             .catch(this.handleError);
     };
     DetailService.prototype.putDetail = function (detail) {

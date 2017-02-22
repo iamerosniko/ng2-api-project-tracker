@@ -14,14 +14,14 @@ namespace ng2_api.Controllers
     {
         public PTContext db = new PTContext();
         //on load display all project's details
-        public List<PT_ProjectDetails_DTO> Get(System.Guid ID)
+        public List<PT_ProjectDetails_DTO> Get(System.Guid projectID)
         {
             List<PT_ProjectDetails_DTO> details = new List<PT_ProjectDetails_DTO>();
             //IQueryable<PT_Projects> tempProjects = db.PT_Projects;
             IQueryable<PT_ProjectDetails> tempDetails = from l in db.PT_ProjectDetails
                                                         where l.pt_detail_show == true
                                                         where l.pt_detail_deleted == false
-                                                        where l.pt_project_id == ID
+                                                        where l.pt_project_id == projectID
                                                         select l;
 
             foreach (PT_ProjectDetails detail in tempDetails)
@@ -47,20 +47,44 @@ namespace ng2_api.Controllers
             }
             return details;
         }
+        //gets selected detail.
+        public PT_ProjectDetails_DTO GetDetail(System.Guid detailID)
+        {
+            PT_ProjectDetails tempDetail= db.PT_ProjectDetails.Find(detailID);
+            if(tempDetail==null){
+                return new PT_ProjectDetails_DTO();
+            }
+            return new PT_ProjectDetails_DTO { 
+                    pt_detail_actend = tempDetail.pt_detail_actend,
+                    pt_detail_actstart = tempDetail.pt_detail_actstart,
+                    pt_detail_assignee = tempDetail.pt_detail_assignee,
+                    pt_detail_deleted = tempDetail.pt_detail_deleted,
+                    pt_detail_deliverable = tempDetail.pt_detail_deliverable,
+                    pt_detail_description = tempDetail.pt_detail_description,
+                    pt_detail_estend = tempDetail.pt_detail_estend,
+                    pt_detail_eststart = tempDetail.pt_detail_eststart,
+                    pt_detail_id = tempDetail.pt_detail_id,
+                    pt_detail_priority = tempDetail.pt_detail_priority,
+                    pt_detail_show = tempDetail.pt_detail_show,
+                    pt_detail_status = tempDetail.pt_detail_status,
+                    pt_detail_task = tempDetail.pt_detail_task,
+                    pt_project_id = tempDetail.pt_project_id
+            };
+        }
 
         // POST api/projects
-        [ResponseType(typeof(PT_Projects))]
-        public void Post(PT_Projects project)
+        [ResponseType(typeof(PT_ProjectDetails))]
+        public void Post(PT_ProjectDetails detail)
         {
-            db.Entry(project).State = EntityState.Added;
+            db.Entry(detail).State = EntityState.Added;
             db.SaveChanges();
         }
 
         // PUT api/projects/5
-        [ResponseType(typeof(PT_Projects))]
-        public void Put(PT_Projects project)
+        [ResponseType(typeof(PT_ProjectDetails))]
+        public void Put(PT_ProjectDetails detail)
         {
-            db.Entry(project).State = EntityState.Modified;
+            db.Entry(detail).State = EntityState.Modified;
             db.SaveChanges();
         }
     }
