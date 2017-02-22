@@ -16,7 +16,7 @@ var DetailListComponent = (function () {
     DetailListComponent.prototype.newProject = function () {
         this.mainDetail.newRecord();
     };
-    DetailListComponent.prototype.deleteProject = function (detail) {
+    DetailListComponent.prototype.delete = function (detail) {
         this.mainDetail.deleteRecord(detail);
         this.mainDetail.refreshList();
     };
