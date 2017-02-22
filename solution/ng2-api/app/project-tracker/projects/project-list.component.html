@@ -6,7 +6,6 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Project Name</th>
                 <th>Description</th>
                 <th>Technology Used</th>
@@ -16,7 +15,6 @@
         </thead>
         <tbody>
             <tr *ngFor="let project of mainProject.projectList">
-                <td>{{project.pt_project_id}}</td>
                 <td>{{project.pt_project_name}}</td>
                 <td>{{project.pt_project_desc}}</td>
                 <td>{{project.pt_project_tech}}</td>

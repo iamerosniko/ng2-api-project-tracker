@@ -1,0 +1,35 @@
+<h3>Detail List Component</h3>
+<div>
+    <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
+        <i class="glyphicon glyphicon-refresh" ></i>
+    </a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Assignee</th>
+                <th>Description</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of mainDetail.detailList">
+                <td>{{detail.pt_detail_status}}</td>
+                <td>{{detail.pt_detail_task}}</td>
+                <td>{{detail.pt_detail_assignee}}</td>
+                <td>{{detail.pt_detail_description}}</td>
+                <td>
+                    <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-edit" ></i>
+                    </a>
+               
+                    <a (click)="deleteRecord(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-trash" ></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
+</div>
