@@ -54,14 +54,14 @@ var DetailParentComponent = (function () {
             }, 750);
         }
     };
-    DetailParentComponent.prototype.getSelectedProjectID = function () {
+    DetailParentComponent.prototype.getselectedDetailID = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.projectID = params['id'];
         });
     };
     DetailParentComponent.prototype.ngOnInit = function () {
-        this.getSelectedProjectID();
+        this.getselectedDetailID();
         this.refreshList();
     };
     DetailParentComponent = __decorate([

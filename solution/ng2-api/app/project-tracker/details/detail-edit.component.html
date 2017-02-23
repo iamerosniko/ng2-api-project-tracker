@@ -1,0 +1,94 @@
+<div [hidden]="!submitted">
+    <h3>Form successfully submitted!</h3>
+    <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
+</div>
+{{diagnostic}}
+<div [hidden]="submitted">
+    <br />
+    <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
+    <h6>Project Edit Form</h6>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <td>Priority
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Task
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                    <td>Assignee
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description
+                        <textarea 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                    <td>Deliverable
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Estimated Start
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                    <td>Estimated End
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
+                            name="description"
+                            #pt_project_desc="ngModel"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
+            Submit
+        </button>  
+    </form>
+</div>
+<hr />
