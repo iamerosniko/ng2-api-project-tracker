@@ -26,13 +26,15 @@
                 </tr>
                 <tr>
                     <td>Task
-                        <input 
+                        <textarea 
+                            style="resize: vertical;"
                             type="text" 
                             class="form-control" 
                             [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
                             name="description"
                             #pt_project_desc="ngModel"
                         >
+                        </textarea>
                     </td>
                     <td>Assignee
                         <input 
@@ -47,6 +49,7 @@
                 <tr>
                     <td>Description
                         <textarea 
+                            style="resize: vertical;"
                             type="text" 
                             class="form-control" 
                             [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
@@ -57,6 +60,7 @@
                     </td>
                     <td>Deliverable
                         <textarea 
+                            style="resize: vertical;"
                             type="text" 
                             class="form-control" 
                             [(ngModel)]="mainProject.selectedDetail.pt_detail_priority"
