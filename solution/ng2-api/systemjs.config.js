@@ -25,7 +25,7 @@
 			'file-saver':'npm:file-saver/file-saver.min.js',
             'ng2-file-upload': 'npm:ng2-file-upload/bundles/ng2-file-upload.umd.min.js',
             'angular2-uuid': 'npm:angular2-uuid/index.js',
-            'ng2-datepicker': 'npm:ng2-datepicker/bundle/ng2-datepicker.umd.js',
+            'angular2-material-datepicker': 'npm:angular2-material-datepicker',
             // other libraries
             'rxjs': 'npm:rxjs'
             //'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
@@ -37,6 +37,10 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'angular2-material-datepicker': {
+                main: './index.js',
                 defaultExtension: 'js'
             }
         }

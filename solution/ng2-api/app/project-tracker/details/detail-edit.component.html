@@ -72,23 +72,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Estimated Start
-                        <input 
+                    <td>Estimated Start</td> 
+                    <td>
+                        <material-datepicker [(date)]="mainDetail.selectedDetail.pt_detail_estend"></material-datepicker>
+                    </td>
+                        <!--<input 
                             type="text" 
                             class="form-control" 
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_eststart"
                             name="eststart"
                             #pt_detail_eststart="ngModel"
-                        >
-                    </td>
+                        >-->
+                        <!--<ng2-datepicker 
+                            [options]="options" 
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_eststart"
+                            name="eststart"
+                            #pt_detail_eststart="ngModel"
+                        ></ng2-datepicker>-->
+                    
                     <td>Estimated End
-                        <input 
+                        <!--<input 
                             type="text" 
                             class="form-control" 
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_estend"
                             name="estend"
                             #pt_detail_estend="ngModel"
-                        >
+                        >-->
+                        <!--<ng2-datepicker 
+                            [options]="options" 
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_estend"
+                            name="estend"
+                            #pt_detail_estend="ngModel"
+                        ></ng2-datepicker>-->
+                        <material-datepicker [(date)]="mainDetail.selectedDetail.pt_detail_estend"></material-datepicker>
                     </td>
                 </tr>
             </tbody>

@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var detail_parent_component_1 = require('./detail-parent.component');
 var DetailEditComponent = (function () {
+    //date: DateModel;
+    //options: DatePickerOptions;
     function DetailEditComponent() {
         this.submitted = false;
         this.priority = [
@@ -19,6 +21,7 @@ var DetailEditComponent = (function () {
         this.detailStatus = [
             'Awaiting', 'In Progress', 'Completed', 'On Hold'
         ];
+        //this.options = new DatePickerOptions();
     }
     DetailEditComponent.prototype.backtoList = function () {
         this.mainDetail.viewpage = 0;
