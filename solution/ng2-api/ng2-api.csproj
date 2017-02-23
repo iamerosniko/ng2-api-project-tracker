@@ -279,12 +279,19 @@
     <Content Include="node_modules\%40angular\platform-browser-dynamic\bundles\platform-browser-dynamic.umd.min.js" />
     <Content Include="node_modules\%40angular\platform-browser\bundles\platform-browser.umd.min.js" />
     <Content Include="node_modules\%40angular\router\bundles\router.umd.min.js" />
+    <Content Include="node_modules\angular2-uuid\index.js" />
     <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
     <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="node_modules\bootstrap\dist\js\bootstrap.min.js" />
     <Content Include="node_modules\core-js\client\shim.min.js" />
+    <Content Include="node_modules\file-saver\demo\demo.css" />
+    <Content Include="node_modules\file-saver\demo\demo.js" />
+    <Content Include="node_modules\file-saver\demo\demo.min.js" />
+    <Content Include="node_modules\file-saver\file-saver.js" />
+    <Content Include="node_modules\file-saver\file-saver.min.js" />
     <Content Include="node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="node_modules\ng2-datepicker\bundle\ng2-datepicker.umd.js" />
     <Content Include="node_modules\ng2-file-upload\bundles\ng2-file-upload.umd.min.js" />
     <Content Include="node_modules\rxjs\add\operator\catch.js" />
     <Content Include="node_modules\rxjs\add\operator\map.js" />
@@ -533,6 +540,11 @@
       <DependentUpon>PTContext.edmx</DependentUpon>
       <LastGenOutput>PTContext.cs</LastGenOutput>
     </Content>
+    <Content Include="node_modules\file-saver\bower.json" />
+    <Content Include="node_modules\file-saver\demo\index.xhtml" />
+    <Content Include="node_modules\file-saver\LICENSE.md" />
+    <Content Include="node_modules\file-saver\package.json" />
+    <Content Include="node_modules\file-saver\README.md" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>

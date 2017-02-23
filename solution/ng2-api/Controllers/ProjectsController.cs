@@ -40,6 +40,8 @@ namespace ng2_api.Controllers
         public PT_Projects_DTO Get(System.Guid projectID)
         {
             PT_Projects project = db.PT_Projects.Find(projectID);
+            if (project == null)
+                return new PT_Projects_DTO();
             return new PT_Projects_DTO
             {
                 pt_project_id=project.pt_project_id,
