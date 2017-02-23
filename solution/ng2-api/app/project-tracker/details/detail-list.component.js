@@ -25,6 +25,9 @@ var DetailListComponent = (function () {
         this.mainDetail.viewpage = 1;
         this.mainDetail.selectedDetail = detail;
     };
+    DetailListComponent.prototype.ngOnInit = function () {
+        this.mainDetail.getProjectDetail();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', detail_parent_component_1.DetailParentComponent)

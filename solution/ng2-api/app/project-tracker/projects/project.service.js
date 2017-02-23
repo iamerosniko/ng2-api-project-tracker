@@ -33,11 +33,11 @@ var ProjectService = (function () {
             .catch(this.handleError);
     };
     ProjectService.prototype.getProject = function (id) {
-        var url = this.projectsUrl + "/" + id;
+        var url = this.projectsUrl + "/?projectID=" + id;
         return this.http
             .get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; }) // testing
+            .then(function (response) { return response.json(); }) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.putProject = function (project) {
