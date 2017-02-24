@@ -28,10 +28,10 @@
           <Property Name="pt_detail_assignee" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="pt_detail_description" Type="nvarchar" MaxLength="250" />
           <Property Name="pt_detail_deliverable" Type="nvarchar" MaxLength="250" />
-          <Property Name="pt_detail_eststart" Type="datetime" />
-          <Property Name="pt_detail_estend" Type="datetime" />
-          <Property Name="pt_detail_actstart" Type="datetime" />
-          <Property Name="pt_detail_actend" Type="datetime" />
+          <Property Name="pt_detail_eststart" Type="date" />
+          <Property Name="pt_detail_estend" Type="date" />
+          <Property Name="pt_detail_actstart" Type="date" />
+          <Property Name="pt_detail_actend" Type="date" />
           <Property Name="pt_detail_status" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="pt_detail_deleted" Type="bit" Nullable="false" />
           <Property Name="pt_detail_show" Type="bit" Nullable="false" />
@@ -48,22 +48,6 @@
           <Property Name="pt_project_deleted" Type="bit" Nullable="false" />
           <Property Name="pt_project_show" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'dbbtVulTstp1.dbo.set_group_access' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="set_group_access">
-          <Property Name="grp_id" Type="nvarchar" MaxLength="25" />
-          <Property Name="mod_id" Type="nvarchar" MaxLength="25" />
-          <Property Name="can_view" Type="bit" />
-          <Property Name="can_add" Type="bit" />
-          <Property Name="can_edit" Type="bit" />
-          <Property Name="can_delete" Type="bit" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="set_user_access">
-          <Property Name="user_id" Type="nvarchar" MaxLength="25" />
-          <Property Name="grp_id" Type="nvarchar" MaxLength="25" />
-        </EntityType>-->
         <Association Name="FK_PT_ProjectDetails_PT_Projects">
           <End Role="PT_Projects" Type="Self.PT_Projects" Multiplicity="1" />
           <End Role="PT_ProjectDetails" Type="Self.PT_ProjectDetails" Multiplicity="*" />
@@ -84,7 +68,7 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
             <End Role="PT_Projects" EntitySet="PT_Projects" />
             <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
           </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -134,10 +118,10 @@ warning 6013: The table/view 'dbbtVulTstp1.dbo.set_user_access' does not have a 
           <Property Name="pt_detail_assignee" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="pt_detail_description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="pt_detail_deliverable" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="pt_detail_eststart" Type="DateTime" Precision="3" />
-          <Property Name="pt_detail_estend" Type="DateTime" Precision="3" />
-          <Property Name="pt_detail_actstart" Type="DateTime" Precision="3" />
-          <Property Name="pt_detail_actend" Type="DateTime" Precision="3" />
+          <Property Name="pt_detail_eststart" Type="DateTime" Precision="0" />
+          <Property Name="pt_detail_estend" Type="DateTime" Precision="0" />
+          <Property Name="pt_detail_actstart" Type="DateTime" Precision="0" />
+          <Property Name="pt_detail_actend" Type="DateTime" Precision="0" />
           <Property Name="pt_detail_status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pt_detail_deleted" Type="Boolean" Nullable="false" />
           <Property Name="pt_detail_show" Type="Boolean" Nullable="false" />
