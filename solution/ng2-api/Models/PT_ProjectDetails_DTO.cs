@@ -14,10 +14,10 @@ namespace ng2_api.Models
         public string pt_detail_assignee { get; set; }
         public string pt_detail_description { get; set; }
         public string pt_detail_deliverable { get; set; }
-        public Nullable<System.DateTime> pt_detail_eststart { get; set; }
-        public Nullable<System.DateTime> pt_detail_estend { get; set; }
-        public Nullable<System.DateTime> pt_detail_actstart { get; set; }
-        public Nullable<System.DateTime> pt_detail_actend { get; set; }
+        public string pt_detail_eststart { get; set; }
+        public string pt_detail_estend { get; set; }
+        public string pt_detail_actstart { get; set; }
+        public string pt_detail_actend { get; set; }
         public string pt_detail_status { get; set; }
         public bool pt_detail_deleted { get; set; }
         public bool pt_detail_show { get; set; }

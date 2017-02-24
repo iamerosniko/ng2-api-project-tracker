@@ -30,6 +30,7 @@
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_priority"
                             name="priority"
                             #pt_detail_priority="ngModel"
+                            required
                         >
                     </td>
                     <td>Assignee
@@ -39,6 +40,7 @@
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_assignee"
                             name="assignee"
                             #pt_detail_assignee="ngModel"
+                            required
                         >
                     </td>
                 </tr>
@@ -51,6 +53,7 @@
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_task"
                             name="task"
                             #pt_detail_task="ngModel"
+                            required
                         >
                         </textarea>
                     </td>
@@ -80,49 +83,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Estimated Start</td> 
-                    <td>Estimated End</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input
+                    <td>Estimated Start 
+                    <input
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_eststart"
                             ng2-datetime-picker
                             name="pt_detail_eststart"
                             #pt_detail_eststart="ngModel"
-                            date-only="true" />
-                        <!--<input 
-                            type="text" 
-                            class="form-control" 
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_eststart"
-                            name="eststart"
-                            [value]="mainDetail.selectedDetail.pt_detail_eststart | date:'yyyy-MM-dd'"
+                            date-only="true"
+                             />
                             
-                            #pt_detail_eststart="ngModel"-->
-                        
                     </td>
-                    <td>
+                
+                    <td>Estimated End
+                    
                         <input
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_estend"
                             name="pt_detail_estend"
                             #pt_detail_estend="ngModel"
                             ng2-datetime-picker
-                            date-only="true" />
-                        <!--<input 
-                            type="text" 
-                            class="form-control" 
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_estend"
-                            name="estend"
-                            value="mainDetail.selectedDetail.pt_detail_estend"
-                            #pt_detail_estend="ngModel"
-                        >-->
-                      
-                        <!--<ng2-datepicker 
-                            [options]="options" 
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_estend"
-                            name="estend"
-                            #pt_detail_estend="ngModel"
-                        ></ng2-datepicker>-->
+                            date-only="true" 
+                            />
+                            
                     </td>
                 </tr>
             </tbody>
