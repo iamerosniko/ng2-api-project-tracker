@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+var ng2_datetime_picker_1 = require('ng2-datetime-picker');
 //Components
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
@@ -23,9 +24,8 @@ var detail_parent_component_1 = require('./details/detail-parent.component');
 //service
 var project_service_1 = require('./projects/project.service');
 var detail_service_1 = require('./details/detail.service');
-//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { ProjectDataService }  from './projects/project-data.service';
-var angular2_material_datepicker_1 = require('angular2-material-datepicker');
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { ProjectDataService }  from './projects/project-data.service';
 var project_tracker_routing_1 = require('./project-tracker.routing');
 var ProjectTrackerModule = (function () {
     function ProjectTrackerModule() {
@@ -36,8 +36,8 @@ var ProjectTrackerModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                angular2_material_datepicker_1.DatepickerModule,
-                //InMemoryWebApiModule.forRoot(ProjectDataService),
+                // InMemoryWebApiModule.forRoot(ProjectDataService),
+                ng2_datetime_picker_1.Ng2DatetimePickerModule,
                 project_tracker_routing_1.ProjectTrackerRouting
             ],
             declarations: [

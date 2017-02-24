@@ -25,7 +25,7 @@ var DetailParentComponent = (function () {
         this.projectID = '';
         this.viewpage = 0;
         this.isNew = false;
-        this.selectedDetail = new detail_1.Detail('', '', '', '', '', '', '', new Date(), new Date(), new Date(), new Date(), '', false, true);
+        this.selectedDetail = new detail_1.Detail('', '', '', '', '', '', '', null, null, null, null, 'awaiting', false, true);
     }
     DetailParentComponent.prototype.refreshList = function () {
         var _this = this;
@@ -36,9 +36,9 @@ var DetailParentComponent = (function () {
         this.projectService.getProject(this.projectID).then(function (project) { return _this.project = project; });
     };
     DetailParentComponent.prototype.newRecord = function () {
-        this.selectedDetail = new detail_1.Detail(angular2_uuid_1.UUID.UUID(), this.projectID, '', '', '', '', '', new Date(), new Date(), new Date(), new Date(), '', false, true);
         this.isNew = true;
         this.viewpage = 1;
+        this.selectedDetail = new detail_1.Detail(angular2_uuid_1.UUID.UUID(), this.projectID, '', '', '', '', '', null, null, null, null, 'awaiting', false, true);
     };
     DetailParentComponent.prototype.saveRecord = function () {
         this.isNew ? this.detailService.postDetail(this.selectedDetail) : this.detailService.putDetail(this.selectedDetail);
