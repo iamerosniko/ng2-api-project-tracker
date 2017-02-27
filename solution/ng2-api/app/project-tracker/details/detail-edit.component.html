@@ -25,14 +25,6 @@
                 </tr>
                 <tr>
                     <td>Priority
-                        <!--<input 
-                            type="text" 
-                            class="form-control" 
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_priority"
-                            name="priority"
-                            #pt_detail_priority="ngModel"
-                            required
-                        >-->
                         <select 
                             class="form-control"
                             [(ngModel)]="mainDetail.selectedDetail.pt_detail_priority"
@@ -115,6 +107,35 @@
                             />
                             
                     </td>
+                </tr>
+                <tr>
+                    <td>Actual Start 
+                    <input
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actstart"
+                            ng2-datetime-picker
+                            name="pt_detail_actstart"
+                            #pt_detail_actstart="ngModel"
+                            date-only="true"
+                             />
+                            
+                    </td>
+                
+                    <td>Actual End
+                    
+                        <input
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actend"
+                            name="pt_detail_actend"
+                            #pt_detail_actend="ngModel"
+                            ng2-datetime-picker
+                            date-only="true" 
+                            />
+                            
+                    </td>
+                </tr>
+                <tr>
+                    <td>On Hold this Project?
+                   
+                
                 </tr>
             </tbody>
         </table>
