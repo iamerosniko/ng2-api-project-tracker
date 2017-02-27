@@ -41,7 +41,9 @@ namespace ng2_api.Controllers
                     pt_detail_show = detail.pt_detail_show,
                     pt_detail_status = detail.pt_detail_status,
                     pt_detail_task = detail.pt_detail_task,
-                    pt_project_id = detail.pt_project_id
+                    pt_project_id = detail.pt_project_id,
+                    pt_detail_onhold= detail.pt_detail_onhold,
+                    pt_detail_reason=detail.pt_detail_reason
 
                 });
             }
@@ -68,7 +70,9 @@ namespace ng2_api.Controllers
                 pt_detail_show = tempDetail.pt_detail_show,
                 pt_detail_status = tempDetail.pt_detail_status,
                 pt_detail_task = tempDetail.pt_detail_task,
-                pt_project_id = tempDetail.pt_project_id
+                pt_project_id = tempDetail.pt_project_id,
+                pt_detail_onhold= tempDetail.pt_detail_onhold,
+                pt_detail_reason=tempDetail.pt_detail_reason
             };
         }
 
