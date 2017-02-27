@@ -28,12 +28,17 @@
                         <i class="glyphicon glyphicon-trash" ></i>
                     </a>
 
-                    <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-trash" ></i>
+                    <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Project Details" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-th-list" ></i>
+                    </a>
+
+                    <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Progress" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-signal" ></i>
                     </a>
                 </td>
             </tr>
         </tbody>
     </table>
+    
     <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
 </div>
