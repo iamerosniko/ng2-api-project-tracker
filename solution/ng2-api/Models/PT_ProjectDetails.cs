@@ -28,6 +28,8 @@ namespace ng2_api.Models
         public string pt_detail_status { get; set; }
         public bool pt_detail_deleted { get; set; }
         public bool pt_detail_show { get; set; }
+        public bool pt_detail_onhold { get; set; }
+        public string pt_detail_reason { get; set; }
     
         public virtual PT_Projects PT_Projects { get; set; }
     }
