@@ -7,7 +7,7 @@
       <Diagram DiagramId="b649213857f14e53974b6a965197c80f" Name="Diagram1">
         <EntityTypeShape EntityType="PTModel.NG2_Cars" Width="1.5" PointX="0.5" PointY="4.625" />
         <EntityTypeShape EntityType="PTModel.PT_Projects" Width="1.5" PointX="2.25" PointY="0.875" />
-        <EntityTypeShape EntityType="PTModel.PT_ProjectDetails" Width="1.5" PointX="4.375" PointY="0.875" />
+        <EntityTypeShape EntityType="PTModel.PT_ProjectDetails" Width="1.5" PointX="4.625" PointY="1.375" />
         <AssociationConnector Association="PTModel.FK_PT_ProjectDetails_PT_Projects" />
       </Diagram>
     </edmx:Diagrams>

@@ -21,15 +21,14 @@
                             #pt_detail_status="ngModel"
                         >
                     </td>
-                    <td>Progress
-                        <input 
-                            readonly
-                            type="text" 
-                            class="form-control" 
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_Progress"
-                            name="Progress"
-                            #pt_detail_Progress="ngModel"
-                        >
+                    <td>
+                        Progress
+                        <hr />
+                        <progressbar [max]="100" [value]="mainDetail.selectedDetail.pt_detail_progress">
+                            <span style="color:white; white-space:nowrap;">
+                                {{mainDetail.selectedDetail.pt_detail_progress}} / {{100}}
+                            </span>
+                        </progressbar>
                     </td>
                 </tr>
                 <tr>
@@ -143,6 +142,7 @@
                 </tr>
                 <tr>
                     <td>Task On Hold?</td>
+
                     <td>Reason
                         <textarea 
                             style="resize: vertical;"
