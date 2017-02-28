@@ -291,6 +291,12 @@
     <Content Include="node_modules\file-saver\file-saver.js" />
     <Content Include="node_modules\file-saver\file-saver.min.js" />
     <Content Include="node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\index.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.component.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.directive.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.module.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.umd.js" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime.js" />
     <Content Include="node_modules\ng2-file-upload\bundles\ng2-file-upload.umd.min.js" />
     <Content Include="node_modules\rxjs\add\operator\catch.js" />
     <Content Include="node_modules\rxjs\add\operator\map.js" />
@@ -544,6 +550,10 @@
     <Content Include="node_modules\file-saver\LICENSE.md" />
     <Content Include="node_modules\file-saver\package.json" />
     <Content Include="node_modules\file-saver\README.md" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.component.metadata.json" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.directive.metadata.json" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.module.metadata.json" />
+    <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime.metadata.json" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
