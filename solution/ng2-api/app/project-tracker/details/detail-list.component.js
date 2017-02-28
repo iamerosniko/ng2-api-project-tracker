@@ -25,6 +25,9 @@ var DetailListComponent = (function () {
         this.mainDetail.viewpage = 1;
         this.mainDetail.selectedDetail = detail;
     };
+    DetailListComponent.prototype.getProgressColor = function (detail) {
+        return detail.pt_detail_progress == 0 ? 'black' : 'white';
+    };
     DetailListComponent.prototype.ngOnInit = function () {
         this.mainDetail.getProjectDetail();
     };

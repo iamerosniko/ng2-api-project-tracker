@@ -11,7 +11,7 @@
                 <th>Status</th>
                 <th>Task</th>
                 <th>Assignee</th>
-                <th>Description</th>
+                <th>Progress</th>
                 <th>Option</th>
             </tr>
         </thead>
@@ -20,7 +20,13 @@
                 <td>{{detail.pt_detail_status}}</td>
                 <td>{{detail.pt_detail_task}}</td>
                 <td>{{detail.pt_detail_assignee}}</td>
-                <td>{{detail.pt_detail_description}}</td>
+                <td>
+                    <progressbar style="height:540px" [max]="100" [value]="detail.pt_detail_progress">
+                        <span [ngStyle]="{'color':getProgressColor(detail), 'white-space':'nowrap'}" >
+                            {{detail.pt_detail_progress}} / {{100}}
+                        </span>
+                    </progressbar>
+                </td>
                 <td>
                     <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-edit" ></i>
@@ -33,5 +39,6 @@
             </tr>
         </tbody>
     </table>
+    
     <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
 </div>

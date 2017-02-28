@@ -15,6 +15,7 @@ var DetailEditComponent = (function () {
     //options: DatePickerOptions;
     function DetailEditComponent() {
         this.submitted = false;
+        this.showProgress = false;
         this.priority = [
             'High', 'Medium', 'Low'
         ];
@@ -35,6 +36,17 @@ var DetailEditComponent = (function () {
             _this.submitted = false;
             _this.backtoList();
         }, 2000);
+    };
+    DetailEditComponent.prototype.getProgressColor = function () {
+        return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
+    };
+    DetailEditComponent.prototype.editProgress = function () {
+        this.tempVal = this.mainDetail.selectedDetail.pt_detail_progress;
+        this.showProgress = !this.showProgress;
+    };
+    DetailEditComponent.prototype.applyProgress = function () {
+        this.mainDetail.selectedDetail.pt_detail_progress = this.tempVal;
+        this.editProgress();
     };
     Object.defineProperty(DetailEditComponent.prototype, "diagnostic", {
         get: function () { return JSON.stringify(this.mainDetail.selectedDetail); },

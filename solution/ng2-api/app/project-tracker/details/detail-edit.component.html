@@ -11,7 +11,8 @@
         <table class="table table-hover">
             <tbody>
                 <tr>
-                    <td>Status
+                    <td>Status</td>
+                    <td>
                         <input 
                             readonly
                             type="text" 
@@ -21,15 +22,7 @@
                             #pt_detail_status="ngModel"
                         >
                     </td>
-                    <td>
-                        Progress
-                        <hr />
-                        <progressbar [max]="100" [value]="mainDetail.selectedDetail.pt_detail_progress">
-                            <span style="color:white; white-space:nowrap;">
-                                {{mainDetail.selectedDetail.pt_detail_progress}} / {{100}}
-                            </span>
-                        </progressbar>
-                    </td>
+                   
                 </tr>
                 <tr>
                     <td>Priority
@@ -138,6 +131,34 @@
                             date-only="true" 
                             />
                             
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Progress
+                        <a *ngIf="!showProgress"
+                            (click)="editProgress()" role="button" 
+                            data-toggle="tooltip" data-placement="bottom" 
+                            title="Edit" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-edit" ></i>
+                        </a>
+                        <input
+                            *ngIf="showProgress"
+                            [(ngModel)]="tempVal"
+                            name="tempoVal"
+                            />
+                        <a *ngIf="showProgress"
+                            (click)="applyProgress()" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-edit" ></i>
+                        </a>
+                    </td>
+                    <td>
+                        
+                        <progressbar style="height:540px" [max]="100" [value]="mainDetail.selectedDetail.pt_detail_progress">
+                            <span [ngStyle]="{'color':getProgressColor(), 'white-space':'nowrap'}" >
+                                {{mainDetail.selectedDetail.pt_detail_progress}} / {{100}}
+                            </span>
+                        </progressbar>
                     </td>
                 </tr>
                 <tr>
