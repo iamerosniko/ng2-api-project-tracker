@@ -21,6 +21,7 @@ namespace ng2_api.Controllers
             IQueryable<PT_ProjectDetails> tempDetails = from l in db.PT_ProjectDetails
                                                         where l.pt_detail_show == true
                                                         where l.pt_detail_deleted == false
+                                                        where l.pt_detail_entrytype == "Task"
                                                         where l.pt_project_id == projectID
                                                         select l;
 
@@ -44,7 +45,9 @@ namespace ng2_api.Controllers
                     pt_project_id = detail.pt_project_id,
                     pt_detail_onhold= detail.pt_detail_onhold,
                     pt_detail_reason=detail.pt_detail_reason,
-                    pt_detail_progress=detail.pt_detail_progress
+                    pt_detail_progress=detail.pt_detail_progress,
+                    pt_detail_entrytype=detail.pt_detail_entrytype
+                    
 
                 });
             }
@@ -74,7 +77,8 @@ namespace ng2_api.Controllers
                 pt_project_id = tempDetail.pt_project_id,
                 pt_detail_onhold= tempDetail.pt_detail_onhold,
                 pt_detail_reason=tempDetail.pt_detail_reason,
-                pt_detail_progress=tempDetail.pt_detail_progress
+                pt_detail_progress=tempDetail.pt_detail_progress,
+                pt_detail_entrytype=tempDetail.pt_detail_entrytype
             };
         }
 

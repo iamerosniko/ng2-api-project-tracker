@@ -9,20 +9,21 @@ namespace ng2_api.Models
     {
         public System.Guid pt_detail_id { get; set; }
         public System.Guid pt_project_id { get; set; }
+        public string pt_detail_status { get; set; }
         public string pt_detail_priority { get; set; }
-        public string pt_detail_task { get; set; }
         public string pt_detail_assignee { get; set; }
+        public string pt_detail_task { get; set; }
         public string pt_detail_description { get; set; }
         public string pt_detail_deliverable { get; set; }
         public string pt_detail_eststart { get; set; }
         public string pt_detail_estend { get; set; }
         public string pt_detail_actstart { get; set; }
         public string pt_detail_actend { get; set; }
-        public string pt_detail_status { get; set; }
-        public bool pt_detail_deleted { get; set; }
-        public bool pt_detail_show { get; set; }
         public bool pt_detail_onhold { get; set; }
         public string pt_detail_reason { get; set; }
         public Nullable<int> pt_detail_progress { get; set; }
+        public bool pt_detail_deleted { get; set; }
+        public bool pt_detail_show { get; set; }
+        public string pt_detail_entrytype { get; set; }
     }
 }

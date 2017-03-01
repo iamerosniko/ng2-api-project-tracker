@@ -26,7 +26,7 @@
             'ng2-file-upload': 'npm:ng2-file-upload/bundles/ng2-file-upload.umd.min.js',
             'angular2-uuid': 'npm:angular2-uuid/index.js',
             'ng2-datetime-picker': 'npm:ng2-datetime-picker/dist',
-            'ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js',
+            //'ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js',
             // other libraries
             'rxjs': 'npm:rxjs'
             //'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
