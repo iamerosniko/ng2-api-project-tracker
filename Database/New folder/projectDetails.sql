@@ -30,6 +30,7 @@ CREATE TABLE [dbo].[PT_ProjectDetails](
 	[pt_detail_actend] [date] NULL,
 	[pt_detail_onhold] [bit] not null,
 	[pt_detail_reason] [nvarchar](max) NULL,
+	[pt_detail_entrytype] [nvarchar](15) null,
 	[pt_detail_progress] [int] null,
 	[pt_detail_deleted] [bit] NOT NULL,
 	[pt_detail_show] [bit] NOT NULL,
