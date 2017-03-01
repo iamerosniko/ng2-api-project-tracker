@@ -35,6 +35,7 @@
           <Property Name="pt_detail_actend" Type="date" />
           <Property Name="pt_detail_onhold" Type="bit" Nullable="false" />
           <Property Name="pt_detail_reason" Type="nvarchar(max)" />
+          <Property Name="pt_detail_entrytype" Type="nvarchar" MaxLength="15" />
           <Property Name="pt_detail_progress" Type="int" />
           <Property Name="pt_detail_deleted" Type="bit" Nullable="false" />
           <Property Name="pt_detail_show" Type="bit" Nullable="false" />
@@ -132,6 +133,7 @@
           <Property Name="pt_detail_deleted" Type="Boolean" Nullable="false" />
           <Property Name="pt_detail_show" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PT_Projects" Relationship="PTModel.FK_PT_ProjectDetails_PT_Projects" FromRole="PT_ProjectDetails" ToRole="PT_Projects" />
+          <Property Name="pt_detail_entrytype" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_PT_ProjectDetails_PT_Projects">
           <End Type="PTModel.PT_Projects" Role="PT_Projects" Multiplicity="1" />
@@ -180,6 +182,7 @@
           <EntitySetMapping Name="PT_ProjectDetails">
             <EntityTypeMapping TypeName="PTModel.PT_ProjectDetails">
               <MappingFragment StoreEntitySet="PT_ProjectDetails">
+                <ScalarProperty Name="pt_detail_entrytype" ColumnName="pt_detail_entrytype" />
                 <ScalarProperty Name="pt_detail_show" ColumnName="pt_detail_show" />
                 <ScalarProperty Name="pt_detail_deleted" ColumnName="pt_detail_deleted" />
                 <ScalarProperty Name="pt_detail_progress" ColumnName="pt_detail_progress" />

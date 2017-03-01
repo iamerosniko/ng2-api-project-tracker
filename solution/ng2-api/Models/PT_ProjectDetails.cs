@@ -31,6 +31,7 @@ namespace ng2_api.Models
         public Nullable<int> pt_detail_progress { get; set; }
         public bool pt_detail_deleted { get; set; }
         public bool pt_detail_show { get; set; }
+        public string pt_detail_entrytype { get; set; }
     
         public virtual PT_Projects PT_Projects { get; set; }
     }
