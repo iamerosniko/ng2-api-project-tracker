@@ -1,4 +1,3 @@
-<h3>Project List Component</h3>
 <div>
     <a (click)="mainProject.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
         <i class="glyphicon glyphicon-refresh" ></i>
@@ -20,15 +19,15 @@
                 <td>{{project.pt_project_tech}}</td>
                 <td>{{project.pt_project_owner}}</td>
                 <td>
-					<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                    <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-edit" ></i>
                     </a>
 
-                    <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Project Details" class="btn btn-default btn-sm">
+                    <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Tasks" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-th-list" ></i>
                     </a>
 
-                    <a (click)="gotoIncidentSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Project Details" class="btn btn-default btn-sm">
+                    <a (click)="gotoIncidentSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Incidents" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-th-list" ></i>
                     </a>
                     |
