@@ -15,10 +15,12 @@ var router_1 = require('@angular/router');
 var project_parent_component_1 = require('./projects/project-parent.component');
 //Details
 var detail_parent_component_1 = require('./details/detail-parent.component');
+var incident_parent_component_1 = require('./details/incident-parent.component');
 var projectTrackerRoutes = [
     //paths
     { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent },
-    { path: 'project/:id', component: detail_parent_component_1.DetailParentComponent },
+    { path: 'tasks/:id', component: detail_parent_component_1.DetailParentComponent },
+    { path: 'incidents/:id', component: incident_parent_component_1.IncidentParentComponent },
 ];
 var ProjectTrackerRouting = (function () {
     function ProjectTrackerRouting() {

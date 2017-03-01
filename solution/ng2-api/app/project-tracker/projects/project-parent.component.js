@@ -45,7 +45,10 @@ var ProjectParentComponent = (function () {
         }
     };
     ProjectParentComponent.prototype.gotoDetail = function (project) {
-        this.router.navigate(['/project', project.pt_project_id]);
+        this.router.navigate(['/tasks', project.pt_project_id]);
+    };
+    ProjectParentComponent.prototype.gotoIncident = function (project) {
+        this.router.navigate(['/incidents', project.pt_project_id]);
     };
     ProjectParentComponent.prototype.ngOnInit = function () {
         this.refreshList();
