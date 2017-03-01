@@ -13,6 +13,7 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var ng2_bootstrap_1 = require('ng2-bootstrap');
+var ng2_bootstrap_2 = require('ng2-bootstrap');
 var ng2_datetime_picker_1 = require('ng2-datetime-picker');
 //Components
 var project_edit_component_1 = require('./projects/project-edit.component');
@@ -39,6 +40,7 @@ var ProjectTrackerModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
+                ng2_bootstrap_2.TabsModule.forRoot(),
                 ng2_bootstrap_1.ProgressbarModule.forRoot(),
                 // InMemoryWebApiModule.forRoot(ProjectDataService),
                 ng2_datetime_picker_1.Ng2DatetimePickerModule,
