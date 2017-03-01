@@ -20,16 +20,20 @@
                 <td>{{project.pt_project_tech}}</td>
                 <td>{{project.pt_project_owner}}</td>
                 <td>
-                    <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+					<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-edit" ></i>
-                    </a>
-               
-                    <a (click)="deleteProject(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-trash" ></i>
                     </a>
 
                     <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Project Details" class="btn btn-default btn-sm">
                         <i class="glyphicon glyphicon-th-list" ></i>
+                    </a>
+
+                    <a (click)="gotoIncidentSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Project Details" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-th-list" ></i>
+                    </a>
+                    |
+                    <a (click)="deleteProject(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-trash" ></i>
                     </a>
                 </td>
             </tr>
