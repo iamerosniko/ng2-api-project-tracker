@@ -53,7 +53,9 @@ namespace ng2_api.Controllers
             }
             return details;
         }
+
         //gets selected detail.
+        [Route("api/details/GetDetail")]
         public PT_ProjectDetails_DTO GetDetail(System.Guid detailID)
         {
             PT_ProjectDetails tempDetail= db.PT_ProjectDetails.Find(detailID);
@@ -81,6 +83,8 @@ namespace ng2_api.Controllers
                 pt_detail_entrytype=tempDetail.pt_detail_entrytype
             };
         }
+
+        [Route("api/details/GetCompletedItems")]
         public List<PT_ProjectDetails_DTO> GetCompletedItems(System.Guid projectID)
         {
             List<PT_ProjectDetails_DTO> details = new List<PT_ProjectDetails_DTO>();
@@ -121,6 +125,7 @@ namespace ng2_api.Controllers
             return details;
         }
 
+        [Route("api/details/GetOnholdItems")]
         public List<PT_ProjectDetails_DTO> GetOnholdItems(System.Guid projectID)
         {
             List<PT_ProjectDetails_DTO> details = new List<PT_ProjectDetails_DTO>();

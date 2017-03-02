@@ -10,15 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 //Folder : project
-var report_service_1 = require('./report.service');
 //Folder : Projects
 var project_service_1 = require('../projects/project.service');
 //Folder : Details
 var detail_service_1 = require('../details/detail.service');
 var incident_service_1 = require('../details/incident.service');
 var ReportParentComponent = (function () {
-    function ReportParentComponent(reportService, detailService, incidentService, projectService) {
-        this.reportService = reportService;
+    function ReportParentComponent(detailService, incidentService, projectService) {
         this.detailService = detailService;
         this.incidentService = incidentService;
         this.projectService = projectService;
@@ -62,9 +60,8 @@ var ReportParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "report-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof report_service_1.ReportService !== 'undefined' && report_service_1.ReportService) === 'function' && _a) || Object, detail_service_1.DetailService, incident_service_1.IncidentService, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, incident_service_1.IncidentService, project_service_1.ProjectService])
     ], ReportParentComponent);
     return ReportParentComponent;
-    var _a;
 }());
 exports.ReportParentComponent = ReportParentComponent;

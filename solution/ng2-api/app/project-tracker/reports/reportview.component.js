@@ -13,6 +13,9 @@ var detail_1 = require('../details/detail');
 var ReportViewComponent = (function () {
     function ReportViewComponent() {
     }
+    ReportViewComponent.prototype.getProgressColor = function (progress) {
+        return progress == 0 ? 'black' : 'white';
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', detail_1.Detail)
