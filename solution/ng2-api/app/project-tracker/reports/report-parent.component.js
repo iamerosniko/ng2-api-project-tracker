@@ -49,7 +49,7 @@ var ReportParentComponent = (function () {
         this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
     };
     ReportParentComponent.prototype.ngOnInit = function () {
-        this.getAllProjects;
+        this.getAllProjects();
     };
     ReportParentComponent = __decorate([
         core_1.Component({

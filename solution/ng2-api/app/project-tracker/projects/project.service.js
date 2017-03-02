@@ -29,7 +29,7 @@ var ProjectService = (function () {
         return this.http
             .get(this.projectsUrl, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json().data; }) //testing
+            .then(function (response) { return response.json() }) //testing
             .catch(this.handleError);
     };
     ProjectService.prototype.getProject = function (id) {
@@ -37,7 +37,7 @@ var ProjectService = (function () {
         return this.http
             .get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; }) // testing
+            .then(function (response) { return response.json()}) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.putProject = function (project) {
