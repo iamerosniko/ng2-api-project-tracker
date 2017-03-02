@@ -50,8 +50,8 @@ var ReportParentComponent = (function () {
         var _this = this;
         this.detailService.getDetails(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
         this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
-        this.reportService.getCompletedItems(project.pt_project_id).then(function (complete) { return _this.completedList = complete; });
-        this.reportService.getOnHoldItems(project.pt_project_id).then(function (onhold) { return _this.onholdList = onhold; });
+        this.detailService.getCompletedItems(project.pt_project_id).then(function (complete) { return _this.completedList = complete; });
+        this.detailService.getOnHoldItems(project.pt_project_id).then(function (onhold) { return _this.onholdList = onhold; });
         this.currentProjectName = project.pt_project_name;
     };
     ReportParentComponent.prototype.ngOnInit = function () {
@@ -62,8 +62,9 @@ var ReportParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "report-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [report_service_1.ReportService, detail_service_1.DetailService, incident_service_1.IncidentService, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof report_service_1.ReportService !== 'undefined' && report_service_1.ReportService) === 'function' && _a) || Object, detail_service_1.DetailService, incident_service_1.IncidentService, project_service_1.ProjectService])
     ], ReportParentComponent);
     return ReportParentComponent;
+    var _a;
 }());
 exports.ReportParentComponent = ReportParentComponent;

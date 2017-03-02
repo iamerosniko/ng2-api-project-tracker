@@ -25,20 +25,28 @@ var DetailService = (function () {
             .then(function (res) { return res.json(); }) // testing
             .catch(this.handleError);
     };
-    //getDetails(id: string): Promise<Detail[]> {
-    //return this.http
-    //      .get(this.detailsUrl, {headers: this.headers})
-    //      .toPromise()
-    //      .then(response => response.json().data as Detail[]) //testing
-    //.then(response => response.json())  // live
-    //       .catch(this.handleError);
-    //}
+    DetailService.prototype.getCompletedItems = function (id) {
+        var url = this.detailsUrl + "/GetCompletedItems/?projectID=" + id;
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(function (response) { return response.json(); }) //testing
+            .catch(this.handleError);
+    };
+    DetailService.prototype.getOnHoldItems = function (id) {
+        var url = this.detailsUrl + "/GetOnholdItems/?projectID=" + id;
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(function (response) { return response.json(); }) //testing
+            .catch(this.handleError);
+    };
     DetailService.prototype.getDetails = function (id) {
         var url = this.detailsUrl + "/?projectID=" + id;
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json() }) //testing
+            .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
     DetailService.prototype.getDetail = function (id) {
@@ -46,7 +54,7 @@ var DetailService = (function () {
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json() }) // testing
+            .then(function (response) { return response.json(); }) // testing
             .catch(this.handleError);
     };
     DetailService.prototype.putDetail = function (detail) {

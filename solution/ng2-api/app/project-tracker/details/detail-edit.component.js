@@ -40,6 +40,7 @@ var DetailEditComponent = (function () {
     };
     DetailEditComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.showProgress = false;
         this.submitted = true;
         this.mainDetail.saveRecord();
         setTimeout(function () {
