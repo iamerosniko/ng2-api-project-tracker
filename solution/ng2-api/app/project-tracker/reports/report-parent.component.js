@@ -22,6 +22,7 @@ var ReportParentComponent = (function () {
         this.detailService = detailService;
         this.incidentService = incidentService;
         this.projectService = projectService;
+        this.currentProjectName = '';
         this.projects = null;
         this.taskList = null;
         this.completedList = null;
@@ -49,6 +50,7 @@ var ReportParentComponent = (function () {
         var _this = this;
         this.detailService.getDetails(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
         this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
+        this.currentProjectName = project.pt_project_name;
     };
     ReportParentComponent.prototype.ngOnInit = function () {
         this.getAllProjects();

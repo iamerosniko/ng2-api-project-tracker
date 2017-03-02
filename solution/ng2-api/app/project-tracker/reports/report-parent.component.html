@@ -1,9 +1,9 @@
 <div [hidden]="projectLength>0">
-hahahahaha walang project bro
+    Gathering Information... 
 </div>
 
 <div [hidden]="projectLength==0">
-    <h3>{{projects}}</h3>
+    <h3>{{currentProjectName}}</h3>
     <button 
         (click)="changePage(false)"
         class="btn btn-default" 
