@@ -1,28 +1,36 @@
+<div [hidden]="projectLength>0">
+hahahahaha walang project bro
+</div>
 
-<h3>Project Name</h3>
-<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-     <i class="glyphicon glyphicon-arrow-left" ></i>
-     Previous Project
-</a>
-<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-    Next Project <i class="glyphicon glyphicon-arrow-right" ></i>
-</a>
+<div [hidden]="projectLength==0">
+    <h3>{{1}}</h3>
+    <button type="submit" 
+        class="btn btn-default" 
+        [disabled]="ctr==0">
+            <i class="glyphicon glyphicon-arrow-left" > Previous Project</i>
+       
+    </button>  
+    <button type="submit" 
+        class="btn btn-default" 
+        [disabled]="projectLength-1>ctr">
+            <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
+       
+    </button>  
+    <tabset>
+        <tab heading="Tasks">
+            <report-view [details]="taskList"></report-view>
+        </tab>
 
-<tabset>
-    <tab heading="Tasks">
-        <report-view [details]="taskList"></report-view>
-    </tab>
+        <tab heading="Incidents">
+            <report-view [details]="incidentList"></report-view>
+        </tab>
 
-    <tab heading="Incidents">
-        <report-view [details]="incidentList"></report-view>
-    </tab>
+        <tab heading="Completed Items">
 
-    <tab heading="Completed Items">
+        </tab> 
+        
+        <tab heading="On Hold">
 
-    </tab> 
-    
-    <tab heading="On Hold">
-
-    </tab>
-</tabset>
- 
+        </tab>
+    </tabset>
+</div>
