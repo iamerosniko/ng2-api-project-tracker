@@ -50,6 +50,8 @@ var ReportParentComponent = (function () {
         var _this = this;
         this.detailService.getDetails(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
         this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
+        this.reportService.getCompletedItems(project.pt_project_id).then(function (complete) { return _this.completedList = complete; });
+        this.reportService.getOnHoldItems(project.pt_project_id).then(function (onhold) { return _this.onholdList = onhold; });
         this.currentProjectName = project.pt_project_name;
     };
     ReportParentComponent.prototype.ngOnInit = function () {

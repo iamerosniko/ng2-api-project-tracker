@@ -254,6 +254,11 @@
     <Content Include="app\project-tracker\projects\project-parent.component.js" />
     <Content Include="app\project-tracker\projects\project.js" />
     <Content Include="app\project-tracker\projects\project.service.js" />
+    <Content Include="app\project-tracker\reports\report-parent.component.html" />
+    <Content Include="app\project-tracker\reports\report-parent.component.js" />
+    <Content Include="app\project-tracker\reports\report.service.js" />
+    <Content Include="app\project-tracker\reports\reportview.component.html" />
+    <Content Include="app\project-tracker\reports\reportview.component.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

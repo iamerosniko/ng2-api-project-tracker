@@ -11,7 +11,7 @@ namespace ng2_api.Controllers
     public class ReportsController : ApiController
     {
         public PTContext db = new PTContext();
-        //on load display all project's details
+        [Route("api/reports/GetCompletedItems")]
         public List<PT_ProjectDetails_DTO> GetCompletedItems(System.Guid projectID)
         {
             List<PT_ProjectDetails_DTO> details = new List<PT_ProjectDetails_DTO>();

@@ -17,20 +17,20 @@ var ReportService = (function () {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.detailsUrl = 'api/reports'; // testing
     }
-    ReportService.prototype.getIncidents = function (id) {
-        var url = this.detailsUrl + "/GetIncident/?projectID=" + id;
+    ReportService.prototype.getCompletedItems = function (id) {
+        var url = this.detailsUrl + "/GetCompletedItems/?projectID=" + id;
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
             .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
-    ReportService.prototype.getTasks = function (id) {
-        var url = this.detailsUrl + "/?projectID=" + id;
+    ReportService.prototype.getOnHoldItems = function (id) {
+        var url = this.detailsUrl + "/GetOnholdItems/?projectID=" + id;
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json().data; }) //testing
+            .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
     ReportService.prototype.handleError = function (error) {
