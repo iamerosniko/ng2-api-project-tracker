@@ -3,16 +3,18 @@ hahahahaha walang project bro
 </div>
 
 <div [hidden]="projectLength==0">
-    <h3>{{1}}</h3>
-    <button type="submit" 
+    <h3>{{projects}}</h3>
+    <button 
+        (click)="changePage(false)"
         class="btn btn-default" 
         [disabled]="ctr==0">
             <i class="glyphicon glyphicon-arrow-left" > Previous Project</i>
        
     </button>  
-    <button type="submit" 
+    <button 
+        (click)="changePage(true)"
         class="btn btn-default" 
-        [disabled]="projectLength-1>ctr">
+        [disabled]="projectLength-1==ctr">
             <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
        
     </button>  

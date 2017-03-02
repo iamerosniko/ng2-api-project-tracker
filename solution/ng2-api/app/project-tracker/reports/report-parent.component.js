@@ -27,12 +27,9 @@ var ReportParentComponent = (function () {
         this.completedList = null;
         this.incidentList = null;
         this.onholdList = null;
-        this.projectID = '';
         this.ctr = 0;
+        this.projectLength = 0;
     }
-    ReportParentComponent.prototype.refreshList = function () {
-        //this.reportService.getIncidents(this.projectID).then(detail => this.detailList = detail);
-    };
     ReportParentComponent.prototype.getAllProjects = function () {
         var _this = this;
         this.projectService.getProjects().then(function (projects) { return _this.projects = projects; });
@@ -43,6 +40,10 @@ var ReportParentComponent = (function () {
                 _this.getAllDetails(_this.projects[_this.ctr]);
             }
         }, 1000);
+    };
+    ReportParentComponent.prototype.changePage = function (con) {
+        this.ctr = con ? this.ctr + 1 : this.ctr - 1;
+        this.getAllDetails(this.projects[this.ctr]);
     };
     ReportParentComponent.prototype.getAllDetails = function (project) {
         var _this = this;
