@@ -1,0 +1,21 @@
+
+<table class="table table-float">
+    <thead >
+        <tr>
+            <th>Status</th> 
+            <th>Task</th>  
+            <th>Assignee</th>  
+            <th>Description</th>  
+            <th>Deliverable</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let detail of details">
+            <td>{{detail.pt_detail_status}}</td>
+            <td>{{detail.pt_detail_task}}</td>
+            <td>{{detail.pt_detail_assignee}}</td>
+            <td>{{detail.pt_detail_description}}</td>
+            <td>{{detail.pt_detail_deliverable}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -11,51 +11,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/add/operator/toPromise');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var ProjectService = (function () {
-    //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
-    function ProjectService(http) {
+var ReportService = (function () {
+    function ReportService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.projectsUrl = 'api/projects'; // testing
+        this.detailsUrl = 'api/reports'; // testing
     }
-    ProjectService.prototype.postProject = function (newProject) {
+    ReportService.prototype.getIncidents = function (id) {
+        var url = this.detailsUrl + "/GetIncident/?projectID=" + id;
         return this.http
-            .post(this.projectsUrl, JSON.stringify(newProject), { headers: this.headers })
+            .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json(); }) // testing
+            .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
-    ProjectService.prototype.getProjects = function () {
+    ReportService.prototype.getTasks = function (id) {
+        var url = this.detailsUrl + "/?projectID=" + id;
         return this.http
-            .get(this.projectsUrl, { headers: this.headers })
+            .get(url, { headers: this.headers })
             .toPromise()
             .then(function (response) { return response.json().data; }) //testing
             .catch(this.handleError);
     };
-    ProjectService.prototype.getProject = function (id) {
-        var url = this.projectsUrl + "/?projectID=" + id;
-        return this.http
-            .get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; }) // testing
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.putProject = function (project) {
-        var url = this.projectsUrl + "/" + project.pt_project_id;
-        return this.http
-            .put(url, JSON.stringify(project), { headers: this.headers })
-            .toPromise()
-            .then(function () { return project; })
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.handleError = function (error) {
+    ReportService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    ProjectService = __decorate([
+    ReportService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ProjectService);
-    return ProjectService;
+    ], ReportService);
+    return ReportService;
 }());
-exports.ProjectService = ProjectService;
+exports.ReportService = ReportService;

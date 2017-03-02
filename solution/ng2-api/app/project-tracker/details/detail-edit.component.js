@@ -16,7 +16,6 @@ var DetailEditComponent = (function () {
     function DetailEditComponent() {
         this.submitted = false;
         this.showProgress = false;
-        this.isOnhold = false;
         this.priority = [
             'High', 'Medium', 'Low'
         ];

@@ -1,0 +1,28 @@
+
+<h3>Project Name</h3>
+<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+     <i class="glyphicon glyphicon-arrow-left" ></i>
+     Previous Project
+</a>
+<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+    Next Project <i class="glyphicon glyphicon-arrow-right" ></i>
+</a>
+
+<tabset>
+    <tab heading="Tasks">
+        <report-view [details]="taskList"></report-view>
+    </tab>
+
+    <tab heading="Incidents">
+        <report-view [details]="incidentList"></report-view>
+    </tab>
+
+    <tab heading="Completed Items">
+
+    </tab> 
+    
+    <tab heading="On Hold">
+
+    </tab>
+</tabset>
+ 
