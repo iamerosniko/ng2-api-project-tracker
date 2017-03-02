@@ -28,6 +28,16 @@ var DetailEditComponent = (function () {
         this.mainDetail.viewpage = 0;
         this.mainDetail.refreshList();
     };
+    DetailEditComponent.prototype.updateStatus = function () {
+        if (this.mainDetail.selectedDetail.pt_detail_progress == 0) {
+            this.mainDetail.selectedDetail.pt_detail_status = "Awaiting";
+        }
+        else if (this.mainDetail.selectedDetail.pt_detail_progress < 100) {
+            this.mainDetail.selectedDetail.pt_detail_status = "On Going";
+        }
+        else
+            this.mainDetail.selectedDetail.pt_detail_status = "Completed";
+    };
     DetailEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
@@ -47,6 +57,7 @@ var DetailEditComponent = (function () {
     DetailEditComponent.prototype.applyProgress = function () {
         this.mainDetail.selectedDetail.pt_detail_progress = this.tempVal;
         this.editProgress();
+        this.updateStatus();
     };
     Object.defineProperty(DetailEditComponent.prototype, "diagnostic", {
         get: function () { return JSON.stringify(this.mainDetail.selectedDetail); },
