@@ -24,6 +24,12 @@ namespace ng2_api.Controllers
             {
                 fuis.Add(new PT_FollowUpItems_DTO
                 {
+                    pt_fui_assignee=fui.pt_fui_assignee,
+                    pt_fui_comments=fui.pt_fui_comments,
+                    pt_fui_id=fui.pt_fui_id,
+                    pt_fui_issolved=fui.pt_fui_issolved,
+                    pt_fui_item=fui.pt_fui_item,
+                    pt_project_id=fui.pt_project_id
                 });
             }
             return fuis;
