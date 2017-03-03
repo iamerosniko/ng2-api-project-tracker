@@ -58,6 +58,20 @@ namespace ng2_api.Controllers
             };
         }
 
+        [Route("api/details/GetIncidentItems")]
+        public List<PT_ProjectDetails_DTO> GetIncidentItems(System.Guid projectID)
+        {
+            List<PT_ProjectDetails_DTO> details = new List<PT_ProjectDetails_DTO>();
+            IQueryable<PT_ProjectDetails> tempDetails = from l in db.PT_ProjectDetails
+                                                        where l.pt_detail_show == true
+                                                        where l.pt_detail_deleted == false
+                                                        where l.pt_detail_entrytype == "Incident"
+                                                        where l.pt_project_id == projectID
+                                                        select l;
+
+            return fetchData(tempDetails);
+        }
+
         [Route("api/details/GetTaskItems")]
         public List<PT_ProjectDetails_DTO> GetTaskItems(System.Guid projectID)
         {
