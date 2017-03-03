@@ -17,6 +17,17 @@
           <Property Name="topSpeed" Type="int" />
           <Property Name="power" Type="int" />
         </EntityType>
+        <EntityType Name="PT_FollowUpItems">
+          <Key>
+            <PropertyRef Name="pt_fui_id" />
+          </Key>
+          <Property Name="pt_fui_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pt_project_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pt_fui_item" Type="nvarchar" MaxLength="100" />
+          <Property Name="pt_fui_assignee" Type="nvarchar" MaxLength="100" />
+          <Property Name="pt_fui_comments" Type="nvarchar(max)" />
+          <Property Name="pt_fui_issolved" Type="bit" />
+        </EntityType>
         <EntityType Name="PT_ProjectDetails">
           <Key>
             <PropertyRef Name="pt_detail_id" />
@@ -66,6 +77,7 @@
         </Association>
         <EntityContainer Name="PTModelStoreContainer">
           <EntitySet Name="NG2_Cars" EntityType="Self.NG2_Cars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PT_FollowUpItems" EntityType="Self.PT_FollowUpItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PT_ProjectDetails" EntityType="Self.PT_ProjectDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PT_Projects" EntityType="Self.PT_Projects" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_PT_ProjectDetails_PT_Projects" Association="Self.FK_PT_ProjectDetails_PT_Projects">
@@ -85,6 +97,7 @@
             <End Role="PT_Projects" EntitySet="PT_Projects" />
             <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
           </AssociationSet>
+          <EntitySet Name="PT_FollowUpItems" EntityType="PTModel.PT_FollowUpItems" />
         </EntityContainer>
         <EntityType Name="NG2_Cars">
           <Key>
@@ -147,6 +160,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="PT_FollowUpItems">
+          <Key>
+            <PropertyRef Name="pt_fui_id" />
+          </Key>
+          <Property Name="pt_fui_id" Type="Guid" Nullable="false" />
+          <Property Name="pt_project_id" Type="Guid" Nullable="false" />
+          <Property Name="pt_fui_item" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pt_fui_assignee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pt_fui_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pt_fui_issolved" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -200,6 +224,18 @@
                 <ScalarProperty Name="pt_detail_status" ColumnName="pt_detail_status" />
                 <ScalarProperty Name="pt_project_id" ColumnName="pt_project_id" />
                 <ScalarProperty Name="pt_detail_id" ColumnName="pt_detail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PT_FollowUpItems">
+            <EntityTypeMapping TypeName="PTModel.PT_FollowUpItems">
+              <MappingFragment StoreEntitySet="PT_FollowUpItems">
+                <ScalarProperty Name="pt_fui_issolved" ColumnName="pt_fui_issolved" />
+                <ScalarProperty Name="pt_fui_comments" ColumnName="pt_fui_comments" />
+                <ScalarProperty Name="pt_fui_assignee" ColumnName="pt_fui_assignee" />
+                <ScalarProperty Name="pt_fui_item" ColumnName="pt_fui_item" />
+                <ScalarProperty Name="pt_project_id" ColumnName="pt_project_id" />
+                <ScalarProperty Name="pt_fui_id" ColumnName="pt_fui_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

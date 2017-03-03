@@ -158,8 +158,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\FuiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NG2_CarsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -189,6 +191,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PTContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PT_FollowUpItems.cs">
+      <DependentUpon>PTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PT_FollowUpItems_DTO.cs" />
     <Compile Include="Models\PT_ProjectDetails_DTO.cs" />
     <Compile Include="Models\PT_ProjectDetails.cs">
       <DependentUpon>PTContext.tt</DependentUpon>

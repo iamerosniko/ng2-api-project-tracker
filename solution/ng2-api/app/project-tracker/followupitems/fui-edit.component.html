@@ -13,7 +13,7 @@
             <input 
                 type="text" 
                 class="form-control" 
-                required 
+                 
             >
         </div>
 
@@ -37,6 +37,7 @@
                 [(ngModel)]="mainFui.selectedFui.pt_fui_assignee"
                 name="pt_fui_assignee"
                 #pt_fui_assignee="ngModel"
+                required
             >
         </div>
         
@@ -48,7 +49,7 @@
                 [(ngModel)]="mainFui.selectedFui.pt_fui_comments"
                 name="pt_fui_comments"
                 #pt_fui_comments="ngModel"
-                required 
+                 
             >
         </div>
         
@@ -58,8 +59,7 @@
                 type="checkbox" 
                 [(ngModel)]="mainFui.selectedFui.pt_fui_issolved"
                 name="pt_fui_issolved"
-                #pt_fui_issolved="ngModel"
-                required 
+                #pt_fui_issolved="ngModel" 
             >
         </div>
 
