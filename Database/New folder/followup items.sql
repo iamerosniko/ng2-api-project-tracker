@@ -14,7 +14,7 @@ GO
 
 CREATE TABLE [dbo].[PT_FollowUpItems](
 	[pt_fui_id] [uniqueidentifier] NOT NULL,
-	[pt_project_id] [nvarchar](100) NULL,
+	[pt_project_id] [uniqueidentifier]Not NULL,
 	[pt_fui_item] [nvarchar](100) NULL,
 	[pt_fui_assignee] [nvarchar](100) NULL,
 	[pt_fui_comments] [nvarchar](max) NULL,
