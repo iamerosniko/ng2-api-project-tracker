@@ -29,14 +29,23 @@ var ReportParentComponent = (function () {
     }
     ReportParentComponent.prototype.getAllProjects = function () {
         var _this = this;
-        this.projectService.getProjects().then(function (projects) { return _this.projects = projects; });
-        setTimeout(function () {
-            _this.projectLength = _this.projects.length;
-            //alert("count : "+this.projectLength);
-            if (_this.projectLength > 0) {
-                _this.getAllDetails(_this.projects[_this.ctr]);
-            }
-        }, 1000);
+        // this.projectService.getProjects().then(projects => this.projects = projects);       
+        // setTimeout(
+        //     () => {
+        //         this.projectLength=this.projects.length;
+        //         //alert("count : "+this.projectLength);
+        //         if(this.projectLength>0){
+        //             this.getAllDetails(this.projects[this.ctr]);
+        //         }
+        //     }, 
+        //     1000
+        // );     
+        this.projectService.getProjects()
+            .then(function (projects) {
+            _this.projects = projects,
+                _this.projectLength = _this.projects.length,
+                _this.projectLength > 0 ? _this.getAllDetails(_this.projects[_this.ctr]) : null;
+        });
     };
     ReportParentComponent.prototype.changePage = function (con) {
         this.ctr = con ? this.ctr + 1 : this.ctr - 1;
