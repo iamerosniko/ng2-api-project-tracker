@@ -38,10 +38,16 @@ var ProjectParentComponent = (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             project.pt_project_deleted = true;
-            this.projectService.putProject(project);
-            setTimeout(function () {
+            // this.projectService.putProject(project);
+            // setTimeout(
+            //     () => {
+            //         this.refreshList();
+            //     }, 
+            //     750
+            // );
+            this.projectService.putProject(project).then(function (any) {
                 _this.refreshList();
-            }, 750);
+            });
         }
     };
     ProjectParentComponent.prototype.gotoDetail = function (project) {

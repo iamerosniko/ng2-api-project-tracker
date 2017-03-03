@@ -48,10 +48,16 @@ var IncidentParentComponent = (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted = true;
-            this.detailService.putDetail(detail);
-            setTimeout(function () {
+            // this.detailService.putDetail(detail);
+            // setTimeout(
+            //     () => {
+            //         this.refreshList();
+            //     }, 
+            //     750
+            // );
+            this.detailService.putDetail(detail).then(function (any) {
                 _this.refreshList();
-            }, 750);
+            });
         }
     };
     IncidentParentComponent.prototype.getselectedDetailID = function () {
