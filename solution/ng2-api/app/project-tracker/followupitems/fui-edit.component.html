@@ -1,0 +1,71 @@
+<div [hidden]="!submitted">
+    <h3>Form successfully submitted!</h3>
+</div>
+{{diagnostic}}
+<div [hidden]="submitted">
+    <br />
+    <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
+    <h6>Fui Edit Form</h6>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+        <div class="form-group">
+            <label for="FuiName">Project</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                required 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="FuiName">Item</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="mainFui.selectedFui.pt_fui_item"
+                name="pt_fui_item"
+                #pt_fui_item="ngModel"
+                required 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="description">Assignee</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="mainFui.selectedFui.pt_fui_assignee"
+                name="pt_fui_assignee"
+                #pt_fui_assignee="ngModel"
+            >
+        </div>
+        
+        <div class="form-group">
+            <label for="owner">Comments</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="mainFui.selectedFui.pt_fui_comments"
+                name="pt_fui_comments"
+                #pt_fui_comments="ngModel"
+                required 
+            >
+        </div>
+        
+        <div class="form-group">
+            <label for="technology">Is Follow up Item Solved?</label>
+            <input 
+                type="checkbox" 
+                [(ngModel)]="mainFui.selectedFui.pt_fui_issolved"
+                name="pt_fui_issolved"
+                #pt_fui_issolved="ngModel"
+                required 
+            >
+        </div>
+
+        <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
+            Submit
+        </button>  
+    </form>
+</div>
+<hr />

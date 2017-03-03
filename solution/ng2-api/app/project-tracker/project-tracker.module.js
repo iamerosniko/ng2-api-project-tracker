@@ -27,9 +27,14 @@ var incident_parent_component_1 = require('./details/incident-parent.component')
 //reports
 var report_parent_component_1 = require('./reports/report-parent.component');
 var reportview_component_1 = require('./reports/reportview.component');
+//followupitems
+var fui_edit_component_1 = require('./followupitems/fui-edit.component');
+var fui_list_component_1 = require('./followupitems/fui-list.component');
+var fui_parent_component_1 = require('./followupitems/fui-parent.component');
 //service
 var project_service_1 = require('./projects/project.service');
 var detail_service_1 = require('./details/detail.service');
+var fui_service_1 = require('./followupitems/fui.service');
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { ProjectDataService }  from './projects/project-data.service';
 var project_tracker_routing_1 = require('./project-tracker.routing');
@@ -57,11 +62,15 @@ var ProjectTrackerModule = (function () {
                 detail_edit_component_1.DetailEditComponent,
                 detail_parent_component_1.DetailParentComponent,
                 report_parent_component_1.ReportParentComponent,
-                reportview_component_1.ReportViewComponent
+                reportview_component_1.ReportViewComponent,
+                fui_edit_component_1.FuiEditComponent,
+                fui_list_component_1.FuiListComponent,
+                fui_parent_component_1.FuiParentComponent
             ],
             providers: [
                 project_service_1.ProjectService,
                 detail_service_1.DetailService,
+                fui_service_1.FuiService
             ]
         }), 
         __metadata('design:paramtypes', [])

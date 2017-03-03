@@ -18,12 +18,15 @@ var detail_parent_component_1 = require('./details/detail-parent.component');
 var incident_parent_component_1 = require('./details/incident-parent.component');
 //Reports
 var report_parent_component_1 = require('./reports/report-parent.component');
+//followupitems
+var fui_parent_component_1 = require('./followupitems/fui-parent.component');
 var projectTrackerRoutes = [
     //paths
     { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent },
     { path: 'tasks/:id', component: detail_parent_component_1.DetailParentComponent },
     { path: 'incidents/:id', component: incident_parent_component_1.IncidentParentComponent },
-    { path: 'reports', component: report_parent_component_1.ReportParentComponent }
+    { path: 'reports', component: report_parent_component_1.ReportParentComponent },
+    { path: 'follow-up-items', component: fui_parent_component_1.FuiParentComponent }
 ];
 var ProjectTrackerRouting = (function () {
     function ProjectTrackerRouting() {
