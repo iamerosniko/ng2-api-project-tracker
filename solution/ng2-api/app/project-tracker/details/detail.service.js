@@ -41,12 +41,28 @@ var DetailService = (function () {
             .then(function (response) { return response.json(); }) //testing
             .catch(this.handleError);
     };
+    DetailService.prototype.getIncidentItems = function (id) {
+        var url = this.detailsUrl + "/GetIncidentItems/?projectID=" + id;
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(function (response) { return response.json(); }) //testing
+            .catch(this.handleError);
+    };
+    DetailService.prototype.getTaskItems = function (id) {
+        var url = this.detailsUrl + "/GetTaskItems/?projectID=" + id;
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(function (response) { return response.json(); }) //testing
+            .catch(this.handleError);
+    };
     DetailService.prototype.getDetails = function (id) {
         var url = this.detailsUrl + "/?projectID=" + id;
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json(); }) //testing
+            .then(function (response) { return response.json().data; }) //testing
             .catch(this.handleError);
     };
     DetailService.prototype.getDetail = function (id) {
@@ -54,7 +70,7 @@ var DetailService = (function () {
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json(); }) // testing
+            .then(function (response) { return response.json().data; }) // testing
             .catch(this.handleError);
     };
     DetailService.prototype.putDetail = function (detail) {

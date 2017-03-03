@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var incident_service_1 = require('./incident.service');
+var detail_service_1 = require('./detail.service');
 var project_service_1 = require('../projects/project.service');
 var detail_1 = require('./detail');
 var project_1 = require('../projects/project');
 var angular2_uuid_1 = require('angular2-uuid');
 var IncidentParentComponent = (function () {
-    function IncidentParentComponent(incidentService, projectService, route, router) {
-        this.incidentService = incidentService;
+    function IncidentParentComponent(detailService, projectService, route, router) {
+        this.detailService = detailService;
         this.projectService = projectService;
         this.route = route;
         this.router = router;
@@ -29,7 +29,7 @@ var IncidentParentComponent = (function () {
     }
     IncidentParentComponent.prototype.refreshList = function () {
         var _this = this;
-        this.incidentService.getIncidents(this.projectID).then(function (detail) { return _this.detailList = detail; });
+        this.detailService.getIncidentItems(this.projectID).then(function (detail) { return _this.detailList = detail; });
     };
     IncidentParentComponent.prototype.getProjectDetail = function () {
         var _this = this;
@@ -41,14 +41,14 @@ var IncidentParentComponent = (function () {
         this.selectedDetail = new detail_1.Detail(angular2_uuid_1.UUID.UUID(), this.projectID, '', '', '', '', '', null, null, null, null, 'awaiting', false, true, false, '', 0, 'Incident');
     };
     IncidentParentComponent.prototype.saveRecord = function () {
-        this.isNew ? this.incidentService.postIncident(this.selectedDetail) : this.incidentService.putIncident(this.selectedDetail);
+        this.isNew ? this.detailService.postDetail(this.selectedDetail) : this.detailService.putDetail(this.selectedDetail);
         this.isNew = false;
     };
     IncidentParentComponent.prototype.deleteRecord = function (detail) {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted = true;
-            this.incidentService.putIncident(detail);
+            this.detailService.putDetail(detail);
             setTimeout(function () {
                 _this.refreshList();
             }, 750);
@@ -69,7 +69,7 @@ var IncidentParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "incident-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [incident_service_1.IncidentService, project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
     ], IncidentParentComponent);
     return IncidentParentComponent;
 }());

@@ -14,11 +14,9 @@ var core_1 = require('@angular/core');
 var project_service_1 = require('../projects/project.service');
 //Folder : Details
 var detail_service_1 = require('../details/detail.service');
-var incident_service_1 = require('../details/incident.service');
 var ReportParentComponent = (function () {
-    function ReportParentComponent(detailService, incidentService, projectService) {
+    function ReportParentComponent(detailService, projectService) {
         this.detailService = detailService;
-        this.incidentService = incidentService;
         this.projectService = projectService;
         this.currentProjectName = '';
         this.projects = null;
@@ -46,8 +44,8 @@ var ReportParentComponent = (function () {
     };
     ReportParentComponent.prototype.getAllDetails = function (project) {
         var _this = this;
-        this.detailService.getDetails(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
-        this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
+        this.detailService.getTaskItems(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
+        this.detailService.getIncidentItems(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
         this.detailService.getCompletedItems(project.pt_project_id).then(function (complete) { return _this.completedList = complete; });
         this.detailService.getOnHoldItems(project.pt_project_id).then(function (onhold) { return _this.onholdList = onhold; });
         this.currentProjectName = project.pt_project_name;
@@ -60,7 +58,7 @@ var ReportParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "report-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [detail_service_1.DetailService, incident_service_1.IncidentService, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, project_service_1.ProjectService])
     ], ReportParentComponent);
     return ReportParentComponent;
 }());
