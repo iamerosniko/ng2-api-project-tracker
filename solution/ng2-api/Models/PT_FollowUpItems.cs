@@ -15,12 +15,10 @@ namespace ng2_api.Models
     public partial class PT_FollowUpItems
     {
         public System.Guid pt_fui_id { get; set; }
-        public System.Guid pt_project_id { get; set; }
+        public string pt_project_name { get; set; }
         public string pt_fui_item { get; set; }
         public string pt_fui_assignee { get; set; }
         public string pt_fui_comments { get; set; }
         public Nullable<bool> pt_fui_issolved { get; set; }
-    
-        public virtual PT_Projects PT_Projects { get; set; }
     }
 }

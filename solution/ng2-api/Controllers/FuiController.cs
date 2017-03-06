@@ -29,7 +29,7 @@ namespace ng2_api.Controllers
                     pt_fui_id=fui.pt_fui_id,
                     pt_fui_issolved=fui.pt_fui_issolved,
                     pt_fui_item=fui.pt_fui_item,
-                    pt_project_id=fui.pt_project_id
+                    pt_project_name=fui.pt_project_name
                 });
             }
             return fuis;
@@ -43,7 +43,7 @@ namespace ng2_api.Controllers
                 return new PT_FollowUpItems_DTO();
             return new PT_FollowUpItems_DTO
             {
-                pt_project_id = project.pt_project_id,
+                pt_project_name = project.pt_project_name,
                 pt_fui_item = project.pt_fui_item,
                 pt_fui_issolved= project.pt_fui_issolved,
                 pt_fui_id=project.pt_fui_id,
@@ -66,6 +66,17 @@ namespace ng2_api.Controllers
         {
             db.Entry(fui).State = EntityState.Modified;
             db.SaveChanges();
+        }
+
+
+        [Route("api/fui/delete")]
+        [ResponseType(typeof(PT_FollowUpItems))]
+        public void Delete(System.Guid fuiID)
+        {
+            PT_FollowUpItems fui = db.PT_FollowUpItems.Find(fuiID);
+            db.PT_FollowUpItems.Remove(fui);
+            db.SaveChanges();
+
         }
 
     }

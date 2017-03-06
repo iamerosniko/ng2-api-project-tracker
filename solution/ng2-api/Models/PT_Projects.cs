@@ -17,7 +17,6 @@ namespace ng2_api.Models
         public PT_Projects()
         {
             this.PT_ProjectDetails = new HashSet<PT_ProjectDetails>();
-            this.PT_FollowUpItems = new HashSet<PT_FollowUpItems>();
         }
     
         public System.Guid pt_project_id { get; set; }
@@ -29,6 +28,5 @@ namespace ng2_api.Models
         public bool pt_project_show { get; set; }
     
         public virtual ICollection<PT_ProjectDetails> PT_ProjectDetails { get; set; }
-        public virtual ICollection<PT_FollowUpItems> PT_FollowUpItems { get; set; }
     }
 }

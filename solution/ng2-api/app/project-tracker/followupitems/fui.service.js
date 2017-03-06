@@ -48,7 +48,7 @@ var FuiService = (function () {
             .catch(this.handleError);
     };
     FuiService.prototype.deleteFui = function (id) {
-        var url = this.fuiUrl + "/" + id;
+        var url = this.fuiUrl + "/Delete/?fuiID=" + id;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(function () { return null; })

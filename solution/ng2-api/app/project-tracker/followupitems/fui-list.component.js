@@ -17,11 +17,6 @@ var FuiListComponent = (function () {
     FuiListComponent.prototype.newFui = function () {
         this.mainFui.newRecord();
     };
-    FuiListComponent.prototype.getProjectName = function (projectID) {
-        var _this = this;
-        this.mainFui.projectService.getProject(projectID).then(function (project) { return _this.tempVal = project.pt_project_name; });
-        return this.tempVal;
-    };
     FuiListComponent.prototype.delete = function (fui) {
         this.mainFui.deleteRecord(fui);
     };

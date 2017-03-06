@@ -17,7 +17,7 @@ GO
 
 CREATE TABLE [dbo].[PT_FollowUpItems](
 	[pt_fui_id] [uniqueidentifier] NOT NULL,
-	[pt_project_id] [uniqueidentifier] NOT NULL,
+	[pt_project_name] [nvarchar](250) NOT NULL,
 	[pt_fui_item] [nvarchar](100) NULL,
 	[pt_fui_assignee] [nvarchar](100) NULL,
 	[pt_fui_comments] [nvarchar](max) NULL,
@@ -29,12 +29,3 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-
-ALTER TABLE [dbo].[PT_FollowUpItems]  WITH CHECK ADD  CONSTRAINT [FK_PT_FollowUpItems_PT_Projects] FOREIGN KEY([pt_project_id])
-REFERENCES [dbo].[PT_Projects] ([pt_project_id])
-GO
-
-ALTER TABLE [dbo].[PT_FollowUpItems] CHECK CONSTRAINT [FK_PT_FollowUpItems_PT_Projects]
-GO
-
-
