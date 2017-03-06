@@ -21,6 +21,7 @@ var FuiEditComponent = (function () {
     FuiEditComponent.prototype.onSubmit = function () {
         this.submitted = true;
         this.mainFui.saveRecord();
+        this.submitted = false;
     };
     Object.defineProperty(FuiEditComponent.prototype, "diagnostic", {
         get: function () { return JSON.stringify(this.mainFui.selectedFui); },

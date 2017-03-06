@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="PTModel.PT_ProjectDetails" Width="1.5" PointX="4.625" PointY="1.375" />
         <AssociationConnector Association="PTModel.FK_PT_ProjectDetails_PT_Projects" />
         <EntityTypeShape EntityType="PTModel.PT_FollowUpItems" Width="1.5" PointX="6.75" PointY="2.375" />
+        <AssociationConnector Association="PTModel.FK_PT_FollowUpItems_PT_Projects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

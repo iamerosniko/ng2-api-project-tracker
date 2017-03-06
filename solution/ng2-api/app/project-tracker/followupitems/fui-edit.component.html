@@ -10,11 +10,15 @@
 
         <div class="form-group">
             <label for="FuiName">Project</label>
-            <input 
-                type="text" 
-                class="form-control" 
-                 
+            <select 
+                class="form-control"
+                [(ngModel)]="mainFui.selectedFui.pt_project_id"
+                name="pt_project_id"
+                #pt_project_id="ngModel"
+                required
             >
+                <option *ngFor="let proj of mainFui.projectList" [value]="proj.pt_project_id">{{proj.pt_project_name}}</option>
+            </select>
         </div>
 
         <div class="form-group">

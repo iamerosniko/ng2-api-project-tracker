@@ -20,5 +20,7 @@ namespace ng2_api.Models
         public string pt_fui_assignee { get; set; }
         public string pt_fui_comments { get; set; }
         public Nullable<bool> pt_fui_issolved { get; set; }
+    
+        public virtual PT_Projects PT_Projects { get; set; }
     }
 }

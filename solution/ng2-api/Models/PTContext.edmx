@@ -63,6 +63,18 @@
           <Property Name="pt_project_deleted" Type="bit" Nullable="false" />
           <Property Name="pt_project_show" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK_PT_FollowUpItems_PT_Projects">
+          <End Role="PT_Projects" Type="Self.PT_Projects" Multiplicity="1" />
+          <End Role="PT_FollowUpItems" Type="Self.PT_FollowUpItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PT_Projects">
+              <PropertyRef Name="pt_project_id" />
+            </Principal>
+            <Dependent Role="PT_FollowUpItems">
+              <PropertyRef Name="pt_project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PT_ProjectDetails_PT_Projects">
           <End Role="PT_Projects" Type="Self.PT_Projects" Multiplicity="1" />
           <End Role="PT_ProjectDetails" Type="Self.PT_ProjectDetails" Multiplicity="*" />
@@ -80,6 +92,10 @@
           <EntitySet Name="PT_FollowUpItems" EntityType="Self.PT_FollowUpItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PT_ProjectDetails" EntityType="Self.PT_ProjectDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PT_Projects" EntityType="Self.PT_Projects" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PT_FollowUpItems_PT_Projects" Association="Self.FK_PT_FollowUpItems_PT_Projects">
+            <End Role="PT_Projects" EntitySet="PT_Projects" />
+            <End Role="PT_FollowUpItems" EntitySet="PT_FollowUpItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_PT_ProjectDetails_PT_Projects" Association="Self.FK_PT_ProjectDetails_PT_Projects">
             <End Role="PT_Projects" EntitySet="PT_Projects" />
             <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
@@ -98,6 +114,10 @@
             <End Role="PT_ProjectDetails" EntitySet="PT_ProjectDetails" />
           </AssociationSet>
           <EntitySet Name="PT_FollowUpItems" EntityType="PTModel.PT_FollowUpItems" />
+          <AssociationSet Name="FK_PT_FollowUpItems_PT_Projects" Association="PTModel.FK_PT_FollowUpItems_PT_Projects">
+            <End Role="PT_Projects" EntitySet="PT_Projects" />
+            <End Role="PT_FollowUpItems" EntitySet="PT_FollowUpItems" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="NG2_Cars">
           <Key>
@@ -123,6 +143,7 @@
           <Property Name="pt_project_deleted" Type="Boolean" Nullable="false" />
           <Property Name="pt_project_show" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PT_ProjectDetails" Relationship="PTModel.FK_PT_ProjectDetails_PT_Projects" FromRole="PT_Projects" ToRole="PT_ProjectDetails" />
+          <NavigationProperty Name="PT_FollowUpItems" Relationship="PTModel.FK_PT_FollowUpItems_PT_Projects" FromRole="PT_Projects" ToRole="PT_FollowUpItems" />
         </EntityType>
         <EntityType Name="PT_ProjectDetails">
           <Key>
@@ -170,7 +191,20 @@
           <Property Name="pt_fui_assignee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="pt_fui_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="pt_fui_issolved" Type="Boolean" />
+          <NavigationProperty Name="PT_Projects" Relationship="PTModel.FK_PT_FollowUpItems_PT_Projects" FromRole="PT_FollowUpItems" ToRole="PT_Projects" />
         </EntityType>
+        <Association Name="FK_PT_FollowUpItems_PT_Projects">
+          <End Type="PTModel.PT_Projects" Role="PT_Projects" Multiplicity="1" />
+          <End Type="PTModel.PT_FollowUpItems" Role="PT_FollowUpItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PT_Projects">
+              <PropertyRef Name="pt_project_id" />
+            </Principal>
+            <Dependent Role="PT_FollowUpItems">
+              <PropertyRef Name="pt_project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

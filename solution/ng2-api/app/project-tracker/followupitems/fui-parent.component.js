@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var fui_1 = require('./fui');
 var fui_service_1 = require('./fui.service');
+var project_service_1 = require('../projects/project.service');
 var angular2_uuid_1 = require('angular2-uuid');
 var FuiParentComponent = (function () {
-    function FuiParentComponent(router, fuiService) {
+    function FuiParentComponent(router, projectService, fuiService) {
         this.router = router;
+        this.projectService = projectService;
         this.fuiService = fuiService;
         this.viewpage = 0;
         this.isNew = false;
@@ -24,6 +26,7 @@ var FuiParentComponent = (function () {
     FuiParentComponent.prototype.refreshList = function () {
         var _this = this;
         this.fuiService.getFuis().then(function (Fui) { return _this.fuiList = Fui; });
+        this.projectService.getProjects().then(function (proj) { return _this.projectList = proj; });
     };
     FuiParentComponent.prototype.newRecord = function () {
         this.selectedFui = new fui_1.Fui(angular2_uuid_1.UUID.UUID(), '', '', '', '', false);
@@ -61,7 +64,7 @@ var FuiParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "fui-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [router_1.Router, fui_service_1.FuiService])
+        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService, fui_service_1.FuiService])
     ], FuiParentComponent);
     return FuiParentComponent;
 }());
