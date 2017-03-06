@@ -1,0 +1,21 @@
+
+<table class="table table-float">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>Project</th>
+            <th>Item</th>
+            <th>Assignee</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fui of fuiList">
+            <td>{{fui.pt_fui_issolved}}</td>
+            <td>{{fui.pt_project_name}}</td>
+            <td>{{fui.pt_fui_item}}</td>
+            <td>{{fui.pt_fui_assignee}}</td>
+            <td>{{fui.pt_fui_comments}}</td>
+        </tr>
+    </tbody>
+</table>

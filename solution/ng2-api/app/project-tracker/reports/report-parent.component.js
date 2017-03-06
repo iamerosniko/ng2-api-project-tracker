@@ -9,37 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//Folder : project
 //Folder : Projects
 var project_service_1 = require('../projects/project.service');
 //Folder : Details
 var detail_service_1 = require('../details/detail.service');
+//followupitems
+var fui_service_1 = require('../followupitems/fui.service');
 var ReportParentComponent = (function () {
-    function ReportParentComponent(detailService, projectService) {
+    function ReportParentComponent(detailService, projectService, fuiService) {
         this.detailService = detailService;
         this.projectService = projectService;
+        this.fuiService = fuiService;
         this.currentProjectName = '';
         this.projects = null;
         this.taskList = null;
         this.completedList = null;
         this.incidentList = null;
         this.onholdList = null;
+        this.fuiList = null;
         this.ctr = 0;
         this.projectLength = 0;
     }
     ReportParentComponent.prototype.getAllProjects = function () {
         var _this = this;
-        // this.projectService.getProjects().then(projects => this.projects = projects);       
-        // setTimeout(
-        //     () => {
-        //         this.projectLength=this.projects.length;
-        //         //alert("count : "+this.projectLength);
-        //         if(this.projectLength>0){
-        //             this.getAllDetails(this.projects[this.ctr]);
-        //         }
-        //     }, 
-        //     1000
-        // );     
         this.projectService.getProjects()
             .then(function (projects) {
             _this.projects = projects,
@@ -57,6 +49,7 @@ var ReportParentComponent = (function () {
         this.detailService.getIncidentItems(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
         this.detailService.getCompletedItems(project.pt_project_id).then(function (complete) { return _this.completedList = complete; });
         this.detailService.getOnHoldItems(project.pt_project_id).then(function (onhold) { return _this.onholdList = onhold; });
+        this.fuiService.getFuis().then(function (fui) { return _this.fuiList = fui; });
         this.currentProjectName = project.pt_project_name;
     };
     ReportParentComponent.prototype.ngOnInit = function () {
@@ -67,7 +60,7 @@ var ReportParentComponent = (function () {
             moduleId: module.id,
             templateUrl: "report-parent.component.html"
         }), 
-        __metadata('design:paramtypes', [detail_service_1.DetailService, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, project_service_1.ProjectService, fui_service_1.FuiService])
     ], ReportParentComponent);
     return ReportParentComponent;
 }());

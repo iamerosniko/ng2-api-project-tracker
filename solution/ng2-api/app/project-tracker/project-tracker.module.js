@@ -27,6 +27,7 @@ var incident_parent_component_1 = require('./details/incident-parent.component')
 //reports
 var report_parent_component_1 = require('./reports/report-parent.component');
 var reportview_component_1 = require('./reports/reportview.component');
+var reportfui_component_1 = require('./reports/reportfui.component');
 //followupitems
 var fui_edit_component_1 = require('./followupitems/fui-edit.component');
 var fui_list_component_1 = require('./followupitems/fui-list.component');
@@ -63,6 +64,7 @@ var ProjectTrackerModule = (function () {
                 detail_parent_component_1.DetailParentComponent,
                 report_parent_component_1.ReportParentComponent,
                 reportview_component_1.ReportViewComponent,
+                reportfui_component_1.ReportFuiComponent,
                 fui_edit_component_1.FuiEditComponent,
                 fui_list_component_1.FuiListComponent,
                 fui_parent_component_1.FuiParentComponent

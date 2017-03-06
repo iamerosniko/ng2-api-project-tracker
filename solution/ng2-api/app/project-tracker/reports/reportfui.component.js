@@ -9,31 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var detail_1 = require('../details/detail');
-var ReportViewComponent = (function () {
-    function ReportViewComponent() {
+var fui_1 = require('../followupitems/fui');
+var ReportFuiComponent = (function () {
+    function ReportFuiComponent() {
     }
-    ReportViewComponent.prototype.getProgressColor = function (progress) {
-        return progress == 0 ? 'black' : 'white';
-    };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', detail_1.Detail)
-    ], ReportViewComponent.prototype, "details", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Number]), 
-        __metadata('design:returntype', String)
-    ], ReportViewComponent.prototype, "getProgressColor", null);
-    ReportViewComponent = __decorate([
+        __metadata('design:type', fui_1.Fui)
+    ], ReportFuiComponent.prototype, "fuiList", void 0);
+    ReportFuiComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'reportview.component.html',
-            selector: 'report-view'
+            templateUrl: 'reportfui.component.html',
+            selector: 'report-fui'
         }), 
         __metadata('design:paramtypes', [])
-    ], ReportViewComponent);
-    return ReportViewComponent;
+    ], ReportFuiComponent);
+    return ReportFuiComponent;
 }());
-exports.ReportViewComponent = ReportViewComponent;
+exports.ReportFuiComponent = ReportFuiComponent;
