@@ -3,8 +3,8 @@
 </div>
 
 <div [hidden]="projectLength==0">
-    <h3>{{currentProjectName}}</h3>
-    <button 
+    <!--<h3>{{currentProjectName}}</h3>-->
+    <!--<button 
         (click)="changePage(false)"
         class="btn btn-default" 
         [disabled]="ctr==0">
@@ -17,22 +17,22 @@
         [disabled]="projectLength-1==ctr">
             <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
        
-    </button>  
-    <tabset>
-        <tab heading="Tasks">
-            <report-view [details]="taskList"></report-view>
+    </button>  -->
+    <tabset >
+        <tab heading="Tasks" (select)="tabChange()">
+            <report-view [parent]="this" [details]="taskList"></report-view>
         </tab>
 
-        <tab heading="Incidents">
-            <report-view [details]="incidentList"></report-view>
+        <tab heading="Incidents" (select)="tabChange()">
+            <report-view [parent]="this" [details]="incidentList"></report-view>
         </tab>
 
-        <tab heading="Completed Items">
-            <report-view [details]="completedList"></report-view>
+        <tab heading="Completed Items" (select)="tabChange()">
+            <report-view [parent]="this" [details]="completedList"></report-view>
         </tab> 
         
-        <tab heading="On Hold">
-            <report-view [details]="onholdList"></report-view>
+        <tab heading="On Hold" (select)="tabChange()">
+            <report-view [parent]="this" [details]="onholdList"></report-view>
         </tab>
         
         <tab heading="Follow up Items">

@@ -1,4 +1,18 @@
-
+<h3>{{parent.currentProjectName}}</h3>
+<button 
+    (click)="parent.changePage(false)"
+    class="btn btn-default" 
+    [disabled]="parent.ctr==0">
+        <i class="glyphicon glyphicon-arrow-left" > Previous Project</i>
+    
+</button>  
+<button 
+    (click)="parent.changePage(true)"
+    class="btn btn-default" 
+    [disabled]="parent.projectLength-1==parent.ctr">
+        <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
+    
+</button>  
 <table class="table table-float">
     <thead >
         <tr>

@@ -52,6 +52,10 @@ var ReportParentComponent = (function () {
         this.fuiService.getFuis().then(function (fui) { return _this.fuiList = fui; });
         this.currentProjectName = project.pt_project_name;
     };
+    ReportParentComponent.prototype.tabChange = function () {
+        this.ctr = 0;
+        this.getAllDetails(this.projects[this.ctr]);
+    };
     ReportParentComponent.prototype.ngOnInit = function () {
         this.getAllProjects();
     };

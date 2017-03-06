@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var detail_1 = require('../details/detail');
+var report_parent_component_1 = require('./report-parent.component');
 var ReportViewComponent = (function () {
     function ReportViewComponent() {
     }
@@ -22,10 +23,8 @@ var ReportViewComponent = (function () {
     ], ReportViewComponent.prototype, "details", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Number]), 
-        __metadata('design:returntype', String)
-    ], ReportViewComponent.prototype, "getProgressColor", null);
+        __metadata('design:type', report_parent_component_1.ReportParentComponent)
+    ], ReportViewComponent.prototype, "parent", void 0);
     ReportViewComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
