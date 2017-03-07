@@ -62,7 +62,7 @@ var DetailService = (function () {
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
-            .then(function (response) { return response.json().data; }) //testing
+            .then(function (response) { return response.json();}) //testing
             .catch(this.handleError);
     };
     DetailService.prototype.getDetail = function (id) {
