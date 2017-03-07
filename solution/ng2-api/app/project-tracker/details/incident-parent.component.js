@@ -21,6 +21,7 @@ var IncidentParentComponent = (function () {
         this.projectService = projectService;
         this.route = route;
         this.router = router;
+        this.tag = 'Incidents';
         this.project = new project_1.Project('', '', '', '', '', false, false);
         this.projectID = '';
         this.viewpage = 0;

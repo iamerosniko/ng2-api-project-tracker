@@ -35,6 +35,10 @@ var DetailListComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', detail_parent_component_1.DetailParentComponent)
     ], DetailListComponent.prototype, "mainDetail", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], DetailListComponent.prototype, "tag", void 0);
     DetailListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

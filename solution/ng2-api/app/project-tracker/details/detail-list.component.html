@@ -1,4 +1,6 @@
 <div>
+    <h1>{{mainDetail.tag}}</h1>
+    <br />
     <h2> {{mainDetail.project.pt_project_name}} </h2>
     <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
         <i class="glyphicon glyphicon-refresh" ></i>
@@ -20,10 +22,16 @@
                 <td>{{detail.pt_detail_assignee}}</td>
                 <td>
                     <progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
-                        <span [ngStyle]="{'color':getProgressColor(detail), 'white-space':'nowrap'}" >
-                            {{detail.pt_detail_progress}} / {{100}}
+                        <span [ngStyle]="{'color':getProgressColor(detail),'back-color':'yellow' ,'white-space':'nowrap'}" >
+                           {{detail.pt_detail_progress}}%
                         </span>
                     </progressbar>
+                    <!--<div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="detail.pt_detail_progress"
+                            aria-valuemin="0" aria-valuemax="100" style="detail.pt_detail_progress">
+                                
+                        </div>
+                    </div>-->
                 </td>
                 <td>
                     <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
