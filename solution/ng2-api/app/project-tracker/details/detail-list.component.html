@@ -1,7 +1,7 @@
 <div class="panel panel-info">
     <div class="panel-heading">{{mainDetail.tag}} : {{mainDetail.project.pt_project_name}}</div>
     <div class="panel-body">
-        <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
+        <a (click)="mainDetail.refreshList()" role="button" tooltip="Refresh" class="btn btn-default btn-sm">
             <i class="glyphicon glyphicon-refresh"></i>  Refresh
         </a>
         <table class="table table-hover">
@@ -17,9 +17,9 @@
             <tbody>
                 <tr *ngFor="let detail of mainDetail.detailList">
                     <td>{{detail.pt_detail_status}}</td>
-                    <td>{{detail.pt_detail_task}}</td>
+                    <td>{{detail.pt_detail_task.slice(0,25)}}</td>
                     <td>{{detail.pt_detail_assignee}}</td>
-                    <td style="width:70px;" class="progress">
+                    <td style="width:70px;" class="progress" >
                         <!--<progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
                             <span [ngStyle]="{'color':getProgressColor(detail),'back-color':'yellow' ,'white-space':'nowrap'}" >
                             {{detail.pt_detail_progress}}%
@@ -32,11 +32,11 @@
                         </div>
                     </td>
                     <td>
-                        <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <a (click)="onSelect(detail)" role="button" tooltip="Edit" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-edit" ></i>
                         </a>
                 
-                        <a (click)="delete(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <a (click)="delete(detail)" role="button" tooltip="Delete" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-trash" ></i>
                         </a>
                     </td>

@@ -1,7 +1,7 @@
 <div class="panel panel-info">
     <div class="panel-heading">Projects</div>
     <div class="panel-body">
-        <a (click)="mainProject.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
+        <a (click)="mainProject.refreshList()" role="button" tooltip="Refresh" class="btn btn-default btn-sm">
             <i class="glyphicon glyphicon-refresh"></i>  Refresh
         </a>
         <table class="table table-hover">
@@ -21,19 +21,19 @@
                     <td>{{project.pt_project_tech}}</td>
                     <td>{{project.pt_project_owner}}</td>
                     <td>
-                        <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <a (click)="onSelect(project)" role="button" tooltip="Edit" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-edit" ></i>
                         </a>
 
-                        <a (click)="gotoDetailSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Tasks" class="btn btn-default btn-sm">
+                        <a (click)="gotoDetailSelect(project)" role="button" tooltip="View Tasks" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-th-list" ></i>
                         </a>
 
-                        <a (click)="gotoIncidentSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Incidents" class="btn btn-default btn-sm">
+                        <a (click)="gotoIncidentSelect(project)" role="button" tooltip="bottom" title="View Incidents" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-th-list" ></i>
                         </a>
                         |
-                        <a (click)="deleteProject(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <a (click)="deleteProject(project)" role="button" tooltip="Delete" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-trash" ></i>
                         </a>
                     </td>
