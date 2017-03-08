@@ -22,15 +22,15 @@
                     <td>{{fui.pt_fui_assignee}}</td>
                     <td>{{fui.pt_fui_comments}}</td>
                     <td>
-                        <a (click)="onSelect(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <a (click)="onSelect(fui)" role="button" tooltip="Edit" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-edit" ></i>
                         </a>
 
-                        <a (click)="markComplete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Tasks" class="btn btn-default btn-sm">
+                        <a (click)="markComplete(fui)" role="button" tooltip="View Tasks" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon glyphicon-ok" ></i>
                         </a>
                         |
-                        <a (click)="delete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                        <a (click)="delete(fui)" role="button" tooltip="Delete" class="btn btn-default btn-sm">
                             <i class="glyphicon glyphicon-trash" ></i>
                         </a>
                     </td>
