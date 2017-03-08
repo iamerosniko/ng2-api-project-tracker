@@ -16,6 +16,7 @@ var DetailEditComponent = (function () {
     function DetailEditComponent() {
         this.submitted = false;
         this.showProgress = false;
+        this.actualdaterequired = 0;
         this.priority = [
             'High', 'Medium', 'Low'
         ];
@@ -27,16 +28,6 @@ var DetailEditComponent = (function () {
     DetailEditComponent.prototype.backtoList = function () {
         this.mainDetail.viewpage = 0;
         this.mainDetail.refreshList();
-    };
-    DetailEditComponent.prototype.updateStatus = function () {
-        if (this.mainDetail.selectedDetail.pt_detail_progress == 0) {
-            this.mainDetail.selectedDetail.pt_detail_status = "Awaiting";
-        }
-        else if (this.mainDetail.selectedDetail.pt_detail_progress < 100) {
-            this.mainDetail.selectedDetail.pt_detail_status = "On Going";
-        }
-        else
-            this.mainDetail.selectedDetail.pt_detail_status = "Completed";
     };
     DetailEditComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -50,6 +41,20 @@ var DetailEditComponent = (function () {
     };
     DetailEditComponent.prototype.getProgressColor = function () {
         return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
+    };
+    DetailEditComponent.prototype.updateStatus = function () {
+        if (this.mainDetail.selectedDetail.pt_detail_progress == 0) {
+            this.mainDetail.selectedDetail.pt_detail_status = "Awaiting";
+            this.actualdaterequired = 0;
+        }
+        else if (this.mainDetail.selectedDetail.pt_detail_progress < 100) {
+            this.mainDetail.selectedDetail.pt_detail_status = "On Going";
+            this.actualdaterequired = 1;
+        }
+        else {
+            this.mainDetail.selectedDetail.pt_detail_status = "Completed";
+            this.actualdaterequired = 2;
+        }
     };
     DetailEditComponent.prototype.editProgress = function () {
         this.tempVal = this.mainDetail.selectedDetail.pt_detail_progress;

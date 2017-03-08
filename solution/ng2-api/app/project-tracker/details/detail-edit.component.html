@@ -124,25 +124,27 @@
                 <tr>
                     <td>Actual Start 
                     <input
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actstart"
-                            ng2-datetime-picker
-                            name="pt_detail_actstart"
-                            #pt_detail_actstart="ngModel"
-                            date-only="true"
-                             />
+                        [required]="actualdaterequired>0 ? 'true' : null"
+                        [(ngModel)]="mainDetail.selectedDetail.pt_detail_actstart"
+                        ng2-datetime-picker
+                        name="pt_detail_actstart"
+                        #pt_detail_actstart="ngModel"
+                        date-only="true"
+                            />
                             
                     </td>
                 
                     <td>Actual End
                     
-                        <input
-                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actend"
-                            name="pt_detail_actend"
-                            #pt_detail_actend="ngModel"
-                            ng2-datetime-picker
-                            date-only="true" 
-                            />
-                            
+                    <input
+                        [(ngModel)]="mainDetail.selectedDetail.pt_detail_actend"
+                        [required]="actualdaterequired==2 ? 'true' : null"
+                        name="pt_detail_actend"
+                        #pt_detail_actend="ngModel"
+                        ng2-datetime-picker
+                        date-only="true" 
+                        />
+                        
                     </td>
                 </tr>
                 <tr>
@@ -187,7 +189,6 @@
 
                     <td *ngIf ="mainDetail.selectedDetail.pt_detail_onhold">Reason
                         <textarea 
-                            
                             [required]="mainDetail.selectedDetail.pt_detail_onhold ? 'true' : null"
                             style="resize: vertical;"
                             type="text" 
