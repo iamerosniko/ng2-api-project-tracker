@@ -2,7 +2,7 @@
     <div class="panel-heading">{{mainDetail.tag}} : {{mainDetail.project.pt_project_name}}</div>
     <div class="panel-body">
         <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
-            <i class="glyphicon glyphicon-refresh" >Refresh</i>
+            <i class="glyphicon glyphicon-refresh"></i>  Refresh
         </a>
         <table class="table table-hover">
             <thead>
@@ -19,18 +19,17 @@
                     <td>{{detail.pt_detail_status}}</td>
                     <td>{{detail.pt_detail_task}}</td>
                     <td>{{detail.pt_detail_assignee}}</td>
-                    <td>
-                        <progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
+                    <td style="width:70px;" class="progress">
+                        <!--<progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
                             <span [ngStyle]="{'color':getProgressColor(detail),'back-color':'yellow' ,'white-space':'nowrap'}" >
                             {{detail.pt_detail_progress}}%
                             </span>
-                        </progressbar>
-                        <!--<div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="detail.pt_detail_progress"
-                                aria-valuemin="0" aria-valuemax="100" style="detail.pt_detail_progress">
-                                    
-                            </div>
-                        </div>-->
+                        </progressbar>-->
+                        <div class="progress-bar" 
+                            [ngStyle]="{'width':detail.pt_detail_progress+'%',
+                                'color':getProgressColor(detail), 'white-space':'nowrap'}"
+                            >{{detail.pt_detail_progress}}%
+                        </div>
                     </td>
                     <td>
                         <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
