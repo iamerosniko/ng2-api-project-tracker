@@ -1,44 +1,50 @@
-<h3>{{parent.currentProjectName}}</h3>
-<button 
-    (click)="parent.changePage(false)"
-    class="btn btn-default" 
-    [disabled]="parent.ctr==0">
-        <i class="glyphicon glyphicon-arrow-left" > Previous Project</i>
-    
-</button>  
-<button 
-    (click)="parent.changePage(true)"
-    class="btn btn-default" 
-    [disabled]="parent.projectLength-1==parent.ctr">
-        <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
-    
-</button>  
-<table class="table table-float">
-    <thead >
-        <tr>
-            <th>Status</th> 
-            <th>Progress</th>
-            <th>Task</th>  
-            <th>Assignee</th>  
-            <th>Description</th>  
-            <th>Deliverable</th>  
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let detail of details">
-            <td>{{detail.pt_detail_status}}</td>
-            <td style="width:70px;" class="progress">
-                
-                    <div class="progress-bar" 
-                    [ngStyle]="{'width':detail.pt_detail_progress+'%',
-                        'color':getProgressColor(detail.pt_detail_progress)}"
-                    >{{detail.pt_detail_progress+'%'}}
-                    </div>
-            </td>
-            <td>{{detail.pt_detail_task}}</td>
-            <td>{{detail.pt_detail_assignee}}</td>
-            <td>{{detail.pt_detail_description}}</td>
-            <td>{{detail.pt_detail_deliverable}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="panel panel-info">
+    <div class="panel-heading">{{parent.currentProjectName}}</div>
+    <div class="panel-body">
+          
+        <button 
+            (click)="parent.changePage(false)"
+            class="btn btn-default" 
+            [disabled]="parent.ctr==0">
+                <i class="glyphicon glyphicon-arrow-left" > Previous Project</i>
+            
+        </button>  
+        <button 
+            (click)="parent.changePage(true)"
+            class="btn btn-default" 
+            [disabled]="parent.projectLength-1==parent.ctr">
+                <i class="glyphicon glyphicon-arrow-right" > Next Project</i>
+            
+        </button>  
+        <table class="table table-float">
+            <thead >
+                <tr>
+                    <th>Status</th> 
+                    <th>Progress</th>
+                    <th>Task</th>  
+                    <th>Assignee</th>  
+                    <th>Description</th>  
+                    <th>Deliverable</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detail of details">
+                    <td>{{detail.pt_detail_status}}</td>
+                    <td style="width:70px;" class="progress">
+                        
+                            <div class="progress-bar" 
+                            [ngStyle]="{'width':detail.pt_detail_progress+'%',
+                                'color':getProgressColor(detail.pt_detail_progress)}"
+                            >{{detail.pt_detail_progress+'%'}}
+                            </div>
+                    </td>
+                    <td>{{detail.pt_detail_task}}</td>
+                    <td>{{detail.pt_detail_assignee}}</td>
+                    <td>{{detail.pt_detail_description}}</td>
+                    <td>{{detail.pt_detail_deliverable}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+      </div>
+</div>

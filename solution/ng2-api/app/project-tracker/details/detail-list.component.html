@@ -1,50 +1,50 @@
-<div>
-    <h1>{{mainDetail.tag}}</h1>
-    <br />
-    <h2> {{mainDetail.project.pt_project_name}} </h2>
-    <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
-        <i class="glyphicon glyphicon-refresh" ></i>
-    </a>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Status</th>
-                <th>Task</th>
-                <th>Assignee</th>
-                <th>Progress</th>
-                <th>Option</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let detail of mainDetail.detailList">
-                <td>{{detail.pt_detail_status}}</td>
-                <td>{{detail.pt_detail_task}}</td>
-                <td>{{detail.pt_detail_assignee}}</td>
-                <td>
-                    <progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
-                        <span [ngStyle]="{'color':getProgressColor(detail),'back-color':'yellow' ,'white-space':'nowrap'}" >
-                           {{detail.pt_detail_progress}}%
-                        </span>
-                    </progressbar>
-                    <!--<div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="detail.pt_detail_progress"
-                            aria-valuemin="0" aria-valuemax="100" style="detail.pt_detail_progress">
-                                
-                        </div>
-                    </div>-->
-                </td>
-                <td>
-                    <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-edit" ></i>
-                    </a>
-               
-                    <a (click)="delete(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-trash" ></i>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
+<div class="panel panel-info">
+    <div class="panel-heading">{{mainDetail.tag}} : {{mainDetail.project.pt_project_name}}</div>
+    <div class="panel-body">
+        <a (click)="mainDetail.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
+            <i class="glyphicon glyphicon-refresh" >Refresh</i>
+        </a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Task</th>
+                    <th>Assignee</th>
+                    <th>Progress</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detail of mainDetail.detailList">
+                    <td>{{detail.pt_detail_status}}</td>
+                    <td>{{detail.pt_detail_task}}</td>
+                    <td>{{detail.pt_detail_assignee}}</td>
+                    <td>
+                        <progressbar [max]="100" [value]="detail.pt_detail_progress" style="height: 20px;">
+                            <span [ngStyle]="{'color':getProgressColor(detail),'back-color':'yellow' ,'white-space':'nowrap'}" >
+                            {{detail.pt_detail_progress}}%
+                            </span>
+                        </progressbar>
+                        <!--<div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="detail.pt_detail_progress"
+                                aria-valuemin="0" aria-valuemax="100" style="detail.pt_detail_progress">
+                                    
+                            </div>
+                        </div>-->
+                    </td>
+                    <td>
+                        <a (click)="onSelect(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-edit" ></i>
+                        </a>
+                
+                        <a (click)="delete(detail)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-trash" ></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a class="btn btn-primary btn-sm" role="button" (click)="newProject()">New Project</a>
+    </div>
 </div>
