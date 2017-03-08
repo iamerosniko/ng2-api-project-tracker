@@ -24,6 +24,7 @@ var DetailListComponent = (function () {
         this.mainDetail.isNew = false;
         this.mainDetail.viewpage = 1;
         this.mainDetail.selectedDetail = detail;
+        this.mainDetail.updateStatus();
     };
     DetailListComponent.prototype.getProgressColor = function (detail) {
         return detail.pt_detail_progress == 0 ? 'black' : 'white';

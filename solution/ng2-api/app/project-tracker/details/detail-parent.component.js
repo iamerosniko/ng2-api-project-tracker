@@ -27,6 +27,7 @@ var DetailParentComponent = (function () {
         this.viewpage = 0;
         this.isNew = false;
         this.selectedDetail = new detail_1.Detail('', '', '', '', '', '', '', null, null, null, null, 'awaiting', false, true, false, '', 0, 'Task');
+        this.actualdaterequired = 0;
     }
     DetailParentComponent.prototype.refreshList = function () {
         var _this = this;
@@ -45,17 +46,24 @@ var DetailParentComponent = (function () {
         this.isNew ? this.detailService.postDetail(this.selectedDetail) : this.detailService.putDetail(this.selectedDetail);
         this.isNew = false;
     };
+    DetailParentComponent.prototype.updateStatus = function () {
+        if (this.selectedDetail.pt_detail_progress == 0) {
+            this.selectedDetail.pt_detail_status = "Awaiting";
+            this.actualdaterequired = 0;
+        }
+        else if (this.selectedDetail.pt_detail_progress < 100) {
+            this.selectedDetail.pt_detail_status = "On Going";
+            this.actualdaterequired = 1;
+        }
+        else {
+            this.selectedDetail.pt_detail_status = "Completed";
+            this.actualdaterequired = 2;
+        }
+    };
     DetailParentComponent.prototype.deleteRecord = function (detail) {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted = true;
-            // this.detailService.putDetail(detail);
-            // setTimeout(
-            //     () => {
-            //         this.refreshList();
-            //     }, 
-            //     750
-            // );
             this.detailService.putDetail(detail).then(function (any) {
                 _this.refreshList();
             });

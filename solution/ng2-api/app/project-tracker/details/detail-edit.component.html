@@ -1,6 +1,5 @@
 <div [hidden]="!submitted">
     <h3>Form successfully submitted!</h3>
-    <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
 </div>
 <!--{{diagnostic}}-->
 <div [hidden]="submitted">
@@ -124,7 +123,7 @@
                 <tr>
                     <td>Actual Start 
                     <input
-                        [required]="actualdaterequired>0 ? 'true' : null"
+                        [required]="mainDetail.actualdaterequired>0 ? 'true' : null"
                         [(ngModel)]="mainDetail.selectedDetail.pt_detail_actstart"
                         ng2-datetime-picker
                         name="pt_detail_actstart"
@@ -138,7 +137,7 @@
                     
                     <input
                         [(ngModel)]="mainDetail.selectedDetail.pt_detail_actend"
-                        [required]="actualdaterequired==2 ? 'true' : null"
+                        [required]="mainDetail.actualdaterequired==2 ? 'true' : null"
                         name="pt_detail_actend"
                         #pt_detail_actend="ngModel"
                         ng2-datetime-picker
