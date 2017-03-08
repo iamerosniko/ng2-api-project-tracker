@@ -1,40 +1,43 @@
-<div>
-    <a (click)="mainFui.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
-        <i class="glyphicon glyphicon-refresh" ></i>
-    </a>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Status</th>
-                <th>Project</th>
-                <th>Item</th>
-                <th>Assignee</th>
-                <th>Comments</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let fui of mainFui.fuiList">
-                <td>{{fui.pt_fui_issolved}}</td>
-                <td>{{fui.pt_project_name}}</td>
-                <td>{{fui.pt_fui_item}}</td>
-                <td>{{fui.pt_fui_assignee}}</td>
-                <td>{{fui.pt_fui_comments}}</td>
-                <td>
-                    <a (click)="onSelect(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-edit" ></i>
-                    </a>
+<div class="panel panel-info">
+    <div class="panel-heading">Follow up Items</div>
+    <div class="panel-body">
+        <a (click)="mainFui.refreshList()" role="button" data-toggle="tooltip" data-placement="bottom" title="Refresh" class="btn btn-default btn-sm">
+            <i class="glyphicon glyphicon-refresh"></i>  Refresh
+        </a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Project</th>
+                    <th>Item</th>
+                    <th>Assignee</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fui of mainFui.fuiList">
+                    <td>{{fui.pt_fui_issolved}}</td>
+                    <td>{{fui.pt_project_name}}</td>
+                    <td>{{fui.pt_fui_item}}</td>
+                    <td>{{fui.pt_fui_assignee}}</td>
+                    <td>{{fui.pt_fui_comments}}</td>
+                    <td>
+                        <a (click)="onSelect(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-edit" ></i>
+                        </a>
 
-                    <a (click)="markComplete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Tasks" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon glyphicon-ok" ></i>
-                    </a>
-                    |
-                    <a (click)="delete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-trash" ></i>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <a class="btn btn-primary btn-sm" role="button" (click)="newFui()">New Project</a>
+                        <a (click)="markComplete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="View Tasks" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon glyphicon-ok" ></i>
+                        </a>
+                        |
+                        <a (click)="delete(fui)" role="button" data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-trash" ></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a class="btn btn-primary btn-sm" role="button" (click)="newFui()">New Project</a>
+    </div>
 </div>
