@@ -23,7 +23,8 @@ namespace ng2_api
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/node_modules/bootstrap/dist/js/bootstrap.min.js",
-                      "~/Scripts/respond.min.js"));
+                      "~/Scripts/respond.min.js",
+                      "~/Scripts/loader.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/node_modules/bootstrap/dist/css/bootstrap.min.css",

@@ -16,6 +16,7 @@ var ng2_bootstrap_1 = require('ng2-bootstrap');
 var ng2_bootstrap_2 = require('ng2-bootstrap');
 var ng2_datetime_picker_1 = require('ng2-datetime-picker');
 var ng2_bootstrap_3 = require('ng2-bootstrap');
+var ng2_google_charts_1 = require('ng2-google-charts');
 //Components
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
@@ -52,6 +53,7 @@ var ProjectTrackerModule = (function () {
                 ng2_bootstrap_2.TabsModule.forRoot(),
                 ng2_bootstrap_1.ProgressbarModule.forRoot(),
                 ng2_bootstrap_3.TooltipModule.forRoot(),
+                ng2_google_charts_1.Ng2GoogleChartsModule,
                 // InMemoryWebApiModule.forRoot(ProjectDataService),
                 ng2_datetime_picker_1.Ng2DatetimePickerModule,
                 project_tracker_routing_1.ProjectTrackerRouting
