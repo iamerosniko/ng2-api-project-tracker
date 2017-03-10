@@ -11,6 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AboutComponent = (function () {
     function AboutComponent() {
+        this.mydate = new Date(2017, 1, 5);
+        this.timelineChartOptions = {
+            chartType: 'Timeline',
+            dataTable: [
+                ['Name', 'From', 'To'],
+                ['Adams', new Date(2017, 2, 4), new Date(2017, 2, 20)],
+                ['Jefferson', this.mydate, new Date(2017, 2, 4)]
+            ]
+        };
     }
     AboutComponent = __decorate([
         core_1.Component({

@@ -195,6 +195,7 @@
       <DependentUpon>PTContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PT_FollowUpItems_DTO.cs" />
+    <Compile Include="Models\PT_Gantt_DTO.cs" />
     <Compile Include="Models\PT_ProjectDetails_DTO.cs" />
     <Compile Include="Models\PT_ProjectDetails.cs">
       <DependentUpon>PTContext.tt</DependentUpon>
@@ -541,6 +542,7 @@
     <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime-picker.umd.js" />
     <Content Include="node_modules\ng2-datetime-picker\dist\ng2-datetime.js" />
     <Content Include="node_modules\ng2-file-upload\bundles\ng2-file-upload.umd.min.js" />
+    <Content Include="node_modules\ng2-google-charts\bundles\ng2-google-charts.umd.min.js" />
     <Content Include="node_modules\rxjs\add\operator\catch.js" />
     <Content Include="node_modules\rxjs\add\operator\map.js" />
     <Content Include="node_modules\rxjs\add\operator\switchMap.js" />
@@ -742,6 +744,7 @@
     <Content Include="node_modules\rxjs\util\UnsubscriptionError.js" />
     <Content Include="node_modules\systemjs\dist\system.js" />
     <Content Include="node_modules\zone.js\dist\zone.min.js" />
+    <Content Include="Scripts\loader.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

@@ -84,8 +84,6 @@ namespace ng2_api.Controllers
                                                         where l.pt_detail_entrytype == "Task"
                                                         where l.pt_project_id == projectID
                                                         select l;
-
-
             return fetchData(tempDetails);
         }
 
@@ -118,6 +116,60 @@ namespace ng2_api.Controllers
                                                         select l;
 
             return fetchData(tempDetails);
+        }
+
+        [Route("api/details/GetActualGantt")]
+        public List<PT_Gantt_DTO> GetActualGantt(System.Guid projectID)
+        {
+            List<PT_Gantt_DTO> details = new List<PT_Gantt_DTO>();
+            int i=1;
+            //IQueryable<PT_Projects> tempProjects = db.PT_Projects;
+            IQueryable<PT_ProjectDetails> tempDetails = from l in db.PT_ProjectDetails
+                                                        where l.pt_detail_show == true
+                                                        where l.pt_detail_deleted == false
+                                                        where l.pt_project_id == projectID
+                                                        where l.pt_detail_onhold == false
+                                                        select l;
+           
+            foreach (PT_ProjectDetails obj in tempDetails)
+            {
+                details.Add(new PT_Gantt_DTO
+                {
+                    dateFrom = obj.pt_detail_actstart,
+                    dateTo = obj.pt_detail_actend,
+                    task = "Task #: " + i.ToString()
+                });
+                i++;
+            }
+
+            return details;
+        }
+
+        [Route("api/details/GetEstimateGantt")]
+        public List<PT_Gantt_DTO> GetEstimateGantt(System.Guid projectID)
+        {
+            List<PT_Gantt_DTO> details = new List<PT_Gantt_DTO>();
+            int i = 1;
+            //IQueryable<PT_Projects> tempProjects = db.PT_Projects;
+            IQueryable<PT_ProjectDetails> tempDetails = from l in db.PT_ProjectDetails
+                                                        where l.pt_detail_show == true
+                                                        where l.pt_detail_deleted == false
+                                                        where l.pt_project_id == projectID
+                                                        where l.pt_detail_onhold == false
+                                                        select l;
+
+            foreach (PT_ProjectDetails obj in tempDetails)
+            {
+                details.Add(new PT_Gantt_DTO
+                {
+                    dateFrom = obj.pt_detail_eststart,
+                    dateTo = obj.pt_detail_estend,
+                    task = "Task #: " + i.ToString()
+                });
+                i++;
+            }
+
+            return details;
         }
         // POST api/projects
         [ResponseType(typeof(PT_ProjectDetails))]

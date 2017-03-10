@@ -28,14 +28,31 @@ var DetailParentComponent = (function () {
         this.isNew = false;
         this.selectedDetail = new detail_1.Detail('', '', '', '', '', '', '', null, null, null, null, 'awaiting', false, true, false, '', 0, 'Task');
         this.actualdaterequired = 0;
+        this.actualGantt = null;
     }
     DetailParentComponent.prototype.refreshList = function () {
         var _this = this;
-        this.detailService.getDetails(this.projectID).then(function (detail) { return _this.detailList = detail; });
+        this.detailService.getDetails(this.projectID)
+            .then(function (detail) { return _this.detailList = detail; })
+            .then(function (y) {
+            _this.getGantt();
+        });
+        ;
     };
     DetailParentComponent.prototype.getProjectDetail = function () {
         var _this = this;
-        this.projectService.getProject(this.projectID).then(function (project) { return _this.project = project; });
+        this.projectService.getProject(this.projectID)
+            .then(function (project) {
+            _this.project = project;
+        });
+    };
+    DetailParentComponent.prototype.getGantt = function () {
+        var ctr = 1;
+        for (var _i = 0, _a = this.detailList; _i < _a.length; _i++) {
+            var entry = _a[_i];
+            //console.log(entry); 
+            //this.actualGantt.concat("task", entry.pt_detail_actstart, entry.pt_detail_actend);
+        }
     };
     DetailParentComponent.prototype.newRecord = function () {
         this.isNew = true;
